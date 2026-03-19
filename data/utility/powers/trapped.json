@@ -1,0 +1,42 @@
+{
+	"type": "origins:active_self",
+	"hidden": true,
+	"key": "key.attack",
+	"cooldown": 20,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:execute_command",
+				"command": "tp @s ~ ~-55 ~"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "effect give @s slow_falling 3"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "effect give @s resistance 10 4"
+			}
+		]
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:distance_from_coordinates",
+				"offset": {
+					"y": 256
+				},
+				"ignore_x": true,
+				"ignore_z": true,
+				"shape": "cube",
+				"comparison": "<",
+				"compare_to": 3
+			},
+			{
+				"type": "origins:sneaking"
+			}
+		]
+	}
+}

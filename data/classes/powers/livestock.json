@@ -1,0 +1,99 @@
+{
+  "type": "origins:active_self",
+  "key": "key.use",
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:equipped_item",
+        "equipment_slot": "offhand",
+        "item_condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:amount",
+              "amound": 4
+            },
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:diamond"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "origins:sneaking"
+      }
+    ]
+  },
+  "entity_action": {
+    "type": "origins:choice",
+    "actions": [
+      {
+        "element": {
+          "type": "origins:give",
+          "stack": {
+            "item": "minecraft:cow_spawn_egg"
+          }
+        },
+        "weight": 5
+      },
+      {
+        "element": {
+          "type": "origins:give",
+          "stack": {
+            "item": "minecraft:sheep_spawn_egg"
+          }
+        },
+        "weight": 5
+      },
+      {
+        "element": {
+          "type": "origins:give",
+          "stack": {
+            "item": "minecraft:chicken_spawn_egg"
+          }
+        },
+        "weight": 5
+      },
+      {
+        "element": {
+          "type": "origins:give",
+          "stack": {
+            "item": "minecraft:fox_spawn_egg"
+          }
+        },
+        "weight": 3
+      },
+      {
+        "element": {
+          "type": "origins:give",
+          "stack": {
+            "item": "minecraft:panda_spawn_egg"
+          }
+        },
+        "weight": 5
+      },
+      {
+        "element": {
+          "type": "origins:give",
+          "stack": {
+            "item": "minecraft:camel_spawn_egg"
+          }
+        },
+        "weight": 2
+      },
+      {
+        "element": {
+          "type": "origins:give",
+          "stack": {
+            "item": "hamsters:hamster"
+          }
+        },
+        "weight": 1
+      }
+    ]
+  }
+}

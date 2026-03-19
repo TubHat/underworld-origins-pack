@@ -1,0 +1,23 @@
+{
+	"type": "origins:multiple",
+	"hidden": true,
+	"reveal": {
+		"type": "origins:action_over_time",
+		"interval": 2400,
+		"entity_action": {
+			"type": "origins:chance",
+			"chance": 0.2,
+			"action": {
+				"type": "origins:execute_command",
+				"command": "function utility:bounty"
+			}
+		}
+	},
+	"on_add": {
+		"type": "origins:action_on_callback",
+		"entity_action_gained": {
+			"type": "origins:execute_command",
+			"command": "function utility:bounty_add"
+		}
+	}
+}

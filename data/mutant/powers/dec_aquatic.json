@@ -1,0 +1,66 @@
+{
+    "type": "origins:multiple",
+    "name": "Amphibious",
+    "description": "You can breath underwater and swim faster. Increased stats underwater. You can also walk on land however you will not regenerate breath",
+    "water_vision": {
+        "type": "origins:toggle_night_vision",
+        "strength": 1.0,
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+        },
+        "active_by_default": true,
+        "key": {
+            "key": "key.origins.quaternary_active",
+            "continuous": false
+        }
+    },
+    "water_breathing": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:gain_air",
+            "value": 40
+        },
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+        }
+    },
+    "swim_speed": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        }
+    },
+    "stats": {
+        "type": "origins:conditioned_attribute",
+        "modifiers": [
+            {
+                "attribute": "minecraft:generic.attack_damage",
+                "operation": "multiply_total",
+                "value": 0.2
+            },
+            {
+                "attribute": "minecraft:generic.attack_speed",
+                "operation": "multiply_total",
+                "value": 0.2
+            },
+            {
+                "attribute": "taa:ads_time",
+                "operation": "multiply_total",
+                "value": 0.1
+            },
+            {
+                "attribute": "taa:reload_time",
+                "operation": "multiply_total",
+                "value": 0.1
+            }
+        ],
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid":"minecraft:water"
+        }
+    }  
+}

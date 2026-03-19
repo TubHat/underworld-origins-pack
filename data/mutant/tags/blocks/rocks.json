@@ -1,0 +1,22 @@
+{
+    "values": [
+        "minecraft:stone",
+        "minecraft:cobblestone",
+        "minecraft:deepslate",
+        "minecraft:andesite",
+        "minecraft:diorite",
+        "minecraft:granite",
+        "minecraft:cobbled_deepslate",
+        "minecraft:sandstone",
+        "minecraft:coal_ore",
+        "minecraft:iron_ore",
+        "minecraft:diamond_ore",
+        "minecraft:copper_ore",
+        "minecraft:gold_ore",
+        "minecraft:deepslate_coal_ore",
+        "minecraft:deepslate_iron_ore",
+        "minecraft:deepslate_diamond_ore",
+        "minecraft:deepslate_copper_ore",
+        "minecraft:deepslate_gold_ore"
+    ]
+}

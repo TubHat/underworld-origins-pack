@@ -1,0 +1,143 @@
+{
+	"type": "origins:multiple",
+	"hidden": true,
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 30,
+		"start_value": 30,
+		"min_action": {
+			"type": "origins:damage",
+			"amount": 250,
+			"source": {
+				"name": "wither",
+				"bypasses_armor": true,
+				"unblockable": true
+			}
+		}
+	},
+	"debuff": {
+		"type": "origins:action_over_time",
+		"interval": 40,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:if_else_list",
+					"actions": [
+						{
+							"action": {
+								"type": "origins:execute_command",
+								"command": "tellraw @s {\"text\":\"I should seek shelter..\",\"color\":\"dark_red\"}"
+							},
+							"condition": {
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:resource",
+										"resource": "utility:surface_resource",
+										"comparison": "==",
+										"compare_to": 20
+									},
+									{
+										"type": "origins:exposed_to_sky"
+									}
+								]
+							}
+						},
+						{
+							"action": {
+								"type": "origins:execute_command",
+								"command": "tellraw @s {\"text\":\"Nosebleed and shivering.. I am dying..\",\"color\":\"dark_red\"}"
+							},
+							"condition": {
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:resource",
+										"resource": "utility:surface_resource",
+										"comparison": "==",
+										"compare_to": 10
+									},
+									{
+										"type": "origins:exposed_to_sky"
+									}
+								]
+							}
+						},
+						{
+							"action": {
+								"type": "origins:and",
+								"actions": [
+									{
+										"type": "origins:damage",
+										"amount": 4,
+										"source": {
+											"name": "wither"
+										}
+									},
+									{
+										"type": "origins:apply_effect",
+										"effect": {
+											"effect": "minecraft:blindness",
+											"duration": 10
+										}
+									}
+								]
+							},
+							"condition": {
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:resource",
+										"resource": "utility:surface_resource",
+										"comparison": "<=",
+										"compare_to": 10
+									},
+									{
+										"type": "origins:exposed_to_sky"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"type": "origins:if_else_list",
+					"actions": [
+						{
+							"action": {
+								"type": "origins:change_resource",
+								"resource": "utility:surface_resource",
+								"change": -1
+							},
+							"condition": {
+								"type": "origins:and",
+								"conditions": [
+									{
+										"type": "origins:dimension",
+										"dimension": "surface:surface"
+									},
+									{
+										"type": "origins:exposed_to_sky"
+									}
+								]
+							}
+						},
+						{
+							"action": {
+								"type": "origins:change_resource",
+								"resource": "utility:surface_resource",
+								"change": 1
+							},
+							"condition": {
+								"type": "origins:exposed_to_sky",
+								"inverted": true
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"hidden": true,
+	"type": "origins:action_over_time",
+	"interval": 40,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:execute_command",
+				"command": "execute as @a[distance=0..200] at @s run playsound minecraft:block.note_block.didgeridoo master @a ~ ~ ~ 10 2"
+			},
+			{
+				"type": "origins:delay",
+				"ticks": 5,
+				"action": {
+					"type": "origins:execute_command",
+					"command": "execute as @a[distance=0..200] at @s run playsound minecraft:block.note_block.bass master @a ~ ~ ~ 10"
+				}
+			}
+		]
+	}
+}

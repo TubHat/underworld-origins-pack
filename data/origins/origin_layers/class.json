@@ -1,0 +1,14 @@
+{
+    "origins": [
+        "classes:scavenger",
+        "classes:herder",
+        "classes:architect",
+        "classes:explorer"
+    ],
+    "order": 2,
+    "name": "Class",
+    "enabled": true,
+    "replace": false,
+    "missing_name": "Unemployed",
+    "missing_description": "You were a lazy jobless bum before the collapse"
+}

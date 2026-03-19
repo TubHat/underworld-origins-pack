@@ -1,0 +1,186 @@
+{
+    "type": "origins:multiple",
+    "name": "Rock diet",
+    "description": "You can only eat stones and minerals, press attack key when holding any stone, ore or ingot in mainhand to consume",
+    "rock_diet": {
+        "type": "origins:active_self",
+        "cooldown": 40,
+        "key": {
+            "key": "key.attack",
+            "continuous": true
+        },
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": [
+                                {
+                                    "item": "stone"
+                                },
+                                {
+                                    "item": "cobblestone"
+                                },
+                                {
+                                    "item": "deepslate"
+                                },
+                                {
+                                    "item": "cobbled_deepslate"
+                                },
+                                {
+                                    "item": "granite"
+                                },
+                                {
+                                    "item": "andesite"
+                                },
+                                {
+                                    "item": "diorite"
+                                }
+                            ]
+                        }
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:feed",
+                                "food": 2,
+                                "saturation": 1
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "entity.player.burp"
+                            },
+                            {
+                                "type": "origins:swing_hand",
+                                "hand": "MAIN_HAND"
+                            },
+                            {
+                                "type": "origins:equipped_item_action",
+                                "equipment_slot": "mainhand",
+                                "action": {
+                                    "type": "origins:consume",
+                                    "amount": 1
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:feed",
+                                "food": 4,
+                                "saturation": 2
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "entity.player.burp"
+                            },
+                            {
+                                "type": "origins:swing_hand",
+                                "hand": "MAIN_HAND"
+                            },
+                            {
+                                "type": "origins:equipped_item_action",
+                                "equipment_slot": "mainhand",
+                                "action": {
+                                    "type": "origins:consume",
+                                    "amount": 1
+                                }
+                            }
+                        ]
+                    },
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": [
+                                {
+                                    "item": "raw_copper"
+                                },
+                                {
+                                    "item": "raw_gold"
+                                },
+                                {
+                                    "item": "raw_iron"
+                                },
+                                {
+                                    "item": "coal"
+                                },
+                                {
+                                    "item": "charcoal"
+                                },
+                                {
+                                    "item": "redstone"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:feed",
+                                "food": 8,
+                                "saturation": 4
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "entity.player.burp"
+                            },
+                            {
+                                "type": "origins:swing_hand",
+                                "hand": "MAIN_HAND"
+                            },
+                            {
+                                "type": "origins:equipped_item_action",
+                                "equipment_slot": "mainhand",
+                                "action": {
+                                    "type": "origins:consume",
+                                    "amount": 1
+                                }
+                            }
+                        ]
+                    },
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": [
+                                {
+                                    "item": "gold_ingot"
+                                },
+                                {
+                                    "item": "copper_ingot"
+                                },
+                                {
+                                    "item": "iron_ingot"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "prevent": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+            "tag": "mutant:food"
+            }
+        }
+    }
+}

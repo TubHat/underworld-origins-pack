@@ -1,0 +1,75 @@
+{
+    "type": "origins:multiple",
+    "hidden": false,
+    "name": "Dryness",
+    "description": "Staying on land for extended period of time dries you, making you weak and slow, submerge yourself in water to moisturise again.",
+    "bar": {
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 10
+        },
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "start_value": 100
+    },
+    "outside_water": {
+        "type": "origins:action_over_time",
+        "interval": 400,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_bar",
+            "change": -5
+        },
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water",
+            "inverted": true
+        }
+    },
+    "regen_bar": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_bar",
+            "change": 5
+        },
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:submerged_in",
+                "fluid": "minecraft:water"
+              },
+              {
+                "type": "origins:in_rain"
+              }
+            ]
+          }
+    },
+    "debuff": {
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effects": [
+                {
+                    "effect": "weakness",
+                    "duration": 60
+                },
+                {
+                    "effect": "slowness",
+                    "duration": 60,
+                    "amplifier": 1
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_bar",
+            "compare_to": 0,
+            "comparison": "=="
+        }
+    }
+}

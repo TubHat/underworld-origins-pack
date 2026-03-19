@@ -1,0 +1,39 @@
+{
+    "type": "origins:active_self",
+    "name": "Mark",
+    "description": "Mark players in a 10 block radius, at the block you look at for upto 50 blocks away, be it for finding your friends or hunting foes.",
+    "cooldown": 600,
+    "hud_render": {
+		"should_render": true,
+		"bar_index": 3
+	},
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+            "type": "origins:raycast",
+            "distance": 50,
+            "block": true,
+            "entity": true,
+            "shape_type": "outline",
+            "fluid_handling": "none",
+            "command_at_hit": "function human:mark",
+            "command_step": 1,
+            "command_along_ray_only_on_hit": true
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.enderman.teleport",
+                "pitch": 2,
+                "volume": 0.6
+            },
+            {
+                "type": "origins:apply_effect",
+                "effect": {
+                    "effect": "minecraft:night_vision",
+                    "duration": 200
+                }
+            }
+        ]
+    }
+}

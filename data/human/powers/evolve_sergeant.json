@@ -1,0 +1,15 @@
+{
+	"type": "origins:self_action_on_kill",
+	"name": "Worthy",
+	"description": "You can prove your worth and be promoted within your affiliation on killing the ender dragon.",
+	"entity_action":{
+          		"type": "origins:execute_command",
+          		"command": "function human:sergeant"
+	},
+	"target_condition":
+		{
+			"type": "origins:entity_type",
+			"entity_type": "ender_dragon"
+		},
+	"cooldown": 20
+}

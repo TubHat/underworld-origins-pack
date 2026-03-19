@@ -1,0 +1,78 @@
+{
+    "type": "origins:multiple",
+    "name": "Execute",
+    "description": "Instantly kill any entity that is below 4 hearts in 1 strike and heal yourself to full health, Press interact key on entity when holding knife in off hand.",
+    "instant_kill": {
+        "type": "origins:action_on_entity_use",
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": {
+                                "tag": "mutant:knives"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": "<=",
+                        "compare_to": 8
+                    }
+                }
+            ]
+        },
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:damage",
+                                "amount": 99,
+                                "source": {
+                                    "name": "generic.player",
+                                    "bypasses_armor": true
+                                }
+                            },
+                            {
+                                "type": "origins:spawn_particles",
+                                "particle": "butchery:blood_particle",
+                                "count": 1000,
+                                "spread": {
+                                    "x": 1,
+                                    "y": 1,
+                                    "z": 1
+                                }
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:entity.player.attack.crit",
+                                "volume": 2,
+                                "pitch": 0.5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:heal",
+                        "amount": 36
+                    }
+                }
+            ]
+        }
+    }
+}

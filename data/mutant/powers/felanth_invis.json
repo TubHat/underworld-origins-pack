@@ -1,0 +1,64 @@
+{
+    "name": "Camoflauge",
+    "description": "When sneaking and holding still, you will camoflauge yourself with the surrounding making you invisible. You will receive 50% more damage when invisible.",
+    "type": "origins:multiple",
+    "increased_dmg": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 0.5
+        },
+        "bientity_condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+                "type": "origins:invisible"
+            }
+        }
+    },
+    "time": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 40
+    },
+    "invisible": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_time",
+            "comparison": "==",
+            "compare_to": 40
+        }
+    },
+    "count": {
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:sneaking"
+                    }
+                ]
+            },
+            "if_action": {
+                "type": "origins:modify_resource",
+                "resource": "*:*_time",
+                "modifier": {
+                    "operation": "add_base_early",
+                    "value": 5
+                }
+            },
+            "else_action": {
+                "type": "origins:modify_resource",
+                "resource": "*:*_time",
+                "modifier": {
+                    "operation": "set_total",
+                    "value": 0
+                }
+            }
+        }
+    }
+}

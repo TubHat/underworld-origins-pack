@@ -1,0 +1,68 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "name": "Rock Crawl",
+    "description": "You can craw through stone like blocks at the cost of increased exhaustion. Toggle with tertiary key",
+    "breath": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "rising_action": {
+            "type": "origins:grant_power",
+            "power": "origins:water_breathing",
+            "source": "your:origin"
+        },
+        "falling_action": {
+            "type": "origins:revoke_power",
+            "power": "origins:water_breathing",
+            "source": "your:origin"
+        },
+        "condition": {
+            "type": "origins:in_block",
+            "block_condition": {
+                "type": "origins:in_tag",
+                "tag": "packname:rocks"
+            }
+        }
+    },
+    "exhaust": {
+        "type": "origins:exhaust",
+        "interval": 20,
+        "exhaustion": 1,
+        "condition": {
+            "type": "origins:in_block",
+            "block_condition": {
+                "type": "origins:in_tag",
+                "tag": "packname:rocks"
+            }
+        }
+    },
+    "crawl": {
+        "type": "origins:swimming",
+        "condition": {
+            "type": "origins:in_block",
+            "block_condition": {
+                "type": "origins:in_tag",
+                "tag": "packname:rocks"
+            }
+        }
+    },
+    "phase": {
+        "type": "origins:phasing",
+        "view_distance": 20,
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "packname:rocks"
+        },
+        "phase_down_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:on_block"
+                }
+            ]
+        }
+    }
+}

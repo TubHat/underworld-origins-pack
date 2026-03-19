@@ -1,0 +1,10 @@
+{
+    "name": "Slow",
+    "description": "You stone-like growths slow your movement speed by 15% and swim speed by 25%",
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_total",
+        "value": -0.15
+    }
+}

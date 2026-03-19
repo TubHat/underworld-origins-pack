@@ -1,0 +1,34 @@
+{
+    "type": "origins:action_on_callback",
+    "hidden": true,
+    "entity_action_gained": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "team join rebellion @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "tag @s add rebel"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"PIERCE THE HEAVENS\",\"bold\":true,\"color\":\"gold\"}"
+            }
+        ]
+    },
+    "entity_action_lost": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "tag @s remove rebel"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "team leave @s"
+            }
+        ]
+    }
+}

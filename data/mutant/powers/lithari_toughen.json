@@ -1,0 +1,72 @@
+{
+   "name":"Toughen",
+   "description":"Boost your toughness, making you invulnerable to any damage for 10 seconds but become unable to move for the duration. After 10 seconds you will be stunned shortly.",
+   "type":"origins:active_self",
+   "entity_action":{
+      "type":"origins:and",
+      "actions":[
+         {
+            "type":"origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:resistance",
+                "amplifier": 4,
+                "duration": 200
+            }
+         },
+        {
+            "type":"origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:slowness",
+                "amplifier": 9,
+                "duration": 200
+            }
+         },
+        {
+            "type":"origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:jump_boost",
+                "amplifier": 200,
+                "duration": 200
+            }
+         },
+         {
+            "type": "origins:delay",
+            "ticks": 200,
+            "action": {
+                "type":"origins:apply_effect",
+                "effect": {
+                    "effect": "minecraft:blindness",
+                    "amplifier": 1,
+                    "duration": 30
+                }
+            }
+         },
+         {
+            "type":"origins:execute_command",
+            "command":"particle minecraft:dust 1 1 1 1 ~ ~ ~ 5 2 5 2 2000 normal @a",
+            "permission_level":4
+         },
+         {
+            "type":"origins:execute_command",
+            "command":"particle minecraft:totem_of_undying ~ ~ ~ 6 6 6 0.5 1000 normal @a",
+            "permission_level":4
+         },
+         {
+            "type": "origins:play_sound",
+            "sound": "butchery:crumbling",
+            "volume": 1,
+            "pitch": 1.5
+         }
+      ]
+   },
+      "cooldown": 600,
+      "hud_render":{
+         "should_render":true,
+         "sprite_location":"origins:textures/gui/community/huang/resource_bar_01.png",
+         "bar_index":4
+      },
+    "key": {
+        "key": "key.origins.secondary_active",
+        "continuous": false
+    }
+}

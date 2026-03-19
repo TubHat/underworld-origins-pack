@@ -1,0 +1,27 @@
+{
+    "name": "Sergeant",
+    "description": "You are a high ranking veteran soldier. You possess enhanced gun handling skills and have more combat experience than before.",
+    "unchoosable": true,
+    "powers": [
+        "utility:trapped",
+        "utility:carcass",
+        "utility:capture",
+        "utility:captor",
+        "utility:travel_surface",
+        "utility:surface",
+        "utility:class_change",
+        "utility:origin_change",
+        
+        "human:sergeant_dodge",
+        "human:sergeant_gun",
+        "human:sergeant_shins",
+        "human:human_adrenaline",
+        "human:human_survivalist",
+        "human:evolve_brig",
+        "human:human_fall_break"
+    ],
+    "icon": {
+        "item": "miklos_mil_arm:helmet_6b_26_helmet"
+    },
+    "impact": 1
+}

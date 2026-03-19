@@ -1,0 +1,15 @@
+{
+    "origins": [
+        "human:human",
+        "human:sergeant",
+        "human:brigadier",
+        "human:general",
+        
+        "mutant:mutant",
+        "mutant:felanth",
+        "mutant:lithari",
+        "mutant:decapodian"
+    ],
+    "enabled": true,
+    "order": 1
+}

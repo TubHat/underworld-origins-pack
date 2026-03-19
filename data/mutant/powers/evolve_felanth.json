@@ -1,0 +1,92 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "pk": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:give",
+            "stack": {
+                "item": "minecraft:paper",
+                "tag": "{display:{Name:'[{\"text\":\"Note\",\"italic\":false,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"I have killed enough men...\",\"italic\":false}]']}}"
+            }
+        }
+    },
+    "pk_inc": {
+        "type": "origins:self_action_on_kill",
+        "cooldown": 2400,
+        "target_condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:player"
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_pk",
+            "change": 1
+        }
+    },
+    "cave_dweller": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:give",
+            "stack": {
+                "item": "minecraft:paper",
+                "tag": "{display:{Name:'[{\"text\":\"Note\",\"italic\":false,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"I fear nothing...\",\"italic\":false}]']}}"
+            }
+        }
+    },
+    "cave_dweller_inc": {
+        "type": "origins:self_action_on_kill",
+        "target_condition": {
+            "type": "origins:entity_type",
+            "entity_type": "cave_dweller:cave_dweller"
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_cave_dweller",
+            "change": 1
+        }
+    },
+    "evolve": {
+        "type": "origins:action_on_item_use",
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_cave_dweller",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_pk",
+                                "comparison": "==",
+                                "compare_to": 3
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "function mutant:felanth"
+                    }
+                }
+            ]
+        },
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "butchery:bottle_of_blood"
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Brigadier",
+    "description": "You are a notable figure among mankind. Having spent decades in the underworld, you while not having mutated, possess seemingly inhuman skills. Your mastery over weapons is unmatched and your leadership skills honed to utmost.",
+    "unchoosable": true,
+    "powers": [
+        "utility:trapped",
+        "utility:capture",
+        "utility:captor",
+        "utility:carcass",
+        "utility:travel_surface",
+        "utility:surface",
+        "utility:class_change",
+        "utility:origin_change",
+        
+        "human:sergeant_dodge",
+        "human:brig_mark",
+        "human:brig_gun",
+        "human:brig_boots",
+        "human:brig_negate",
+        "human:brig_hearts",
+        "human:human_adrenaline",
+        "human:human_survivalist",
+        "human:human_fall_break",
+        "human:evolve_gen"
+    ],
+    "icon": {
+        "item": "miklos_mil_arm:helmet_6b_26goggles_helmet"
+    },
+    "impact": 1
+}

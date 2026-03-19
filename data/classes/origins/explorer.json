@@ -1,0 +1,14 @@
+{
+    "name": "Explorer",
+    "description": "Avid explorer, you love to explore the underworld.",
+    "unchoosable": false,
+    "powers": [
+        "classes:wall_climb",
+        "classes:lucky",
+        "classes:step_height",
+        "classes:less_exhaust"
+    ],
+    "icon": {
+        "item": "butchery:fur_suit_boots"
+    }
+}

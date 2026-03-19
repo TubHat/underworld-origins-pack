@@ -1,0 +1,12 @@
+{
+    "origins": [
+        "factions:federation",
+        "factions:rebellion"
+    ],
+    "order": 3,
+    "name": "Faction",
+    "enabled": true,
+    "replace": false,
+    "missing_name": "Civilian",
+    "missing_description": "Worthless."
+}

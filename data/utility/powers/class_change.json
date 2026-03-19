@@ -1,0 +1,63 @@
+{
+    "type": "origins:active_self",
+    "key": "key.attack",
+    "hidden": true,
+    "cooldown": 60,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "item": "minecraft:enchanted_book"
+                    }
+                }
+            },
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "offhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "item": "minecraft:diamond"
+                    }
+                }
+            },
+            {
+                "type": "origins:sneaking"
+            }
+        ]
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "mainhand",
+                "action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                }
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "offhand",
+                "action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "origin gui @s origins:class"
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:block.amethyst_block.chime"
+            }
+        ]
+    }
+}

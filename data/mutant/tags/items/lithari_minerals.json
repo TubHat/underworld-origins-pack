@@ -1,0 +1,11 @@
+{
+    "values": [
+        "minecraft:iron_ore",
+        "minecraft:coal",
+        "minecraft:gold_ore",
+        "minecraft:copper_ore",
+        "minecraft:iron_ingot",
+        "minecraft:gold_ingot",
+        "minecraft:copper_ingot"
+    ]
+}

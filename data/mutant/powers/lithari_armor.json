@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Natural Armor health bonus",
+    "attribute": "minecraft:generic.armor",
+    "value": 6.0,
+    "operation": "addition"
+  },
+  "name": "Rock Hide",
+  "description": "The rock like outcroppings on your skin provide protection."
+}

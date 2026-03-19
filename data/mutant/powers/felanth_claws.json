@@ -1,0 +1,46 @@
+{
+  "type": "origins:multiple",
+  "name": "Claws",
+  "description": "You deal 6 more damage with your fists and have a small chance of inflicting poison.",
+  "dmg": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "name": "Unarmed Cutting Strikes",
+      "value": 6,
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:air"
+        }
+      }
+    }
+  },
+  "bleed": {
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+      "type": "origins:chance",
+      "chance": 0.1,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "poison",
+              "duration": 60
+            }
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "particle dust 1 0.1 0.1 0.4 ~ ~ ~ 0.2 1 0.2 1 1000"
+          }
+        ]
+      }
+    }
+  }
+}

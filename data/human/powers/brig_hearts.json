@@ -1,0 +1,10 @@
+{
+    "type": "origins:attribute",
+    "name": "Battle hardened",
+    "description": "You are getting tougher over time, +2 hearts",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 4
+    }
+}

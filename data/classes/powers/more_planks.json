@@ -1,0 +1,85 @@
+{
+  "type": "origins:multiple",
+  "name": "Resourceful Crafting",
+  "description": "You can craft additional planks from any log type.",
+  "oak_plank": {
+    "type": "origins:modify_crafting",
+    "recipe": "minecraft:oak_planks",
+    "result": {
+      "item": "oak_planks",
+      "amount": 6
+    }
+  },
+  "spruce_plank": {
+    "type": "origins:modify_crafting",
+    "recipe": "minecraft:spruce_planks",
+    "result": {
+      "item": "spruce_planks",
+      "amount": 6
+    }
+  },
+  "birch_plank": {
+    "type": "origins:modify_crafting",
+    "recipe": "minecraft:birch_planks",
+    "result": {
+      "item": "birch_planks",
+      "amount": 6
+    }
+  },
+  "jungle_plank": {
+    "type": "origins:modify_crafting",
+    "recipe": "minecraft:jungle_planks",
+    "result": {
+      "item": "jungle_planks",
+      "amount": 6
+    }
+  },
+  "acacia_plank": {
+    "type": "origins:modify_crafting",
+    "recipe": "minecraft:acacia_planks",
+    "result": {
+      "item": "acacia_planks",
+      "amount": 6
+    }
+  },
+  "dark_oak_plank": {
+    "type": "origins:modify_crafting",
+    "recipe": "minecraft:dark_oak_planks",
+    "result": {
+      "item": "dark_oak_planks",
+      "amount": 6
+    }
+  },
+  "mangrove_plank": {
+    "type": "origins:modify_crafting",
+    "recipe": "minecraft:mangrove_planks",
+    "result": {
+      "item": "mangrove_planks",
+      "amount": 6
+    }
+  },
+  "cherry_plank": {
+    "type": "origins:modify_crafting",
+    "recipe": "minecraft:cherry_planks",
+    "result": {
+      "item": "cherry_planks",
+      "amount": 6
+    }
+  },
+  "crimson_plank": {
+    "type": "origins:modify_crafting",
+    "recipe": "minecraft:crimson_planks",
+    "result": {
+      "item": "crimson_planks",
+      "amount": 6
+    }
+  },
+  "warped_plank": {
+    "type": "origins:modify_crafting",
+    "recipe": "minecraft:warped_planks",
+    "result": {
+      "item": "warped_planks",
+      "amount": 6
+    }
+  }
+}

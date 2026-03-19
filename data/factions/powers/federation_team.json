@@ -1,0 +1,34 @@
+{
+    "type": "origins:action_on_callback",
+    "hidden": true,
+    "entity_action_gained": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "team join federation @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "tag @s add fed"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"ORDER AND REDEMPTION\",\"bold\":true,\"color\":\"dark_purple\"}"
+            }
+        ]
+    },
+    "entity_action_lost": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "tag @s remove fed"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "team leave @s"
+            }
+        ]
+    }
+}

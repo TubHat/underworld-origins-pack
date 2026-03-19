@@ -1,0 +1,13 @@
+{
+    "name": "Herder",
+    "description": "You worked as a herder in the overworld, you had managed to hide some of your livestock in various places in the underworld which you may retrieve.",
+    "unchoosable": false,
+    "powers": [
+        "classes:livestock",
+        "classes:easy_lead",
+        "classes:breeder"
+    ],
+    "icon": {
+        "item": "minecraft:lead"
+    }
+}

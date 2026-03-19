@@ -1,0 +1,22 @@
+{
+    "name": "Veteran Gunsman",
+    "description": "You can reload much faster, improved ads speed. You are more accurate, do significantly more melee damage with guns.",
+    "type": "origins:attribute",
+    "modifers": [
+        {
+            "attribute": "taa:ads_time",
+            "operation": "addition",
+            "value": -0.4
+        },
+        {
+            "attribute": "taa:reload_time",
+            "operation": "addition",
+            "value": -0.3
+        },
+        {
+            "attribute": "taa:melee_damage",
+            "operation": "multiply_total",
+            "value": 1.5
+        }
+    ]
+}

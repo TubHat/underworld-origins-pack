@@ -1,0 +1,13 @@
+{
+    "type": "origins:modify_exhaustion",
+    "name": "Frequent Hiker",
+    "description": "You are used to exploration, reduced hunger rate from sprinting",
+    "condition": {
+        "type": "origins:sprinting"
+    },
+    "modifier": {
+        "name": "Decreased exhaustion rate",
+        "operation": "multiply_base",
+        "value": -0.5
+    }
+}

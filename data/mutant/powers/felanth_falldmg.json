@@ -1,0 +1,13 @@
+{
+  "type": "origins:modify_damage_taken",
+  "name": "Feline Acrobatics",
+  "description": "Your lightweight body is able to distribute fall impact effectively, making you immune to fall damage",
+  "modifier": {
+    "value": -1,
+    "operation": "multiply_total"
+  },
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "fall"
+  }
+}
