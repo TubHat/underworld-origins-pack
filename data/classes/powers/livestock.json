@@ -29,56 +29,69 @@
     ]
   },
   "entity_action": {
-    "type": "origins:choice",
+    "type": "origins:and",
     "actions": [
       {
-        "element": {
-          "type": "origins:execute_command",
-          "command": "summon minecraft:cow ~ ~ ~"
-        },
-        "weight": 5
+        "type": "origins:choice",
+        "actions": [
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:cow ~ ~ ~"
+            },
+            "weight": 5
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:sheep ~ ~ ~"
+            },
+            "weight": 5
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:chicken ~ ~ ~"
+            },
+            "weight": 5
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:fox ~ ~ ~"
+            },
+            "weight": 3
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:panda ~ ~ ~"
+            },
+            "weight": 5
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:camel~ ~ ~"
+            },
+            "weight": 2
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon hamsters:hamster ~ ~ ~"
+            },
+            "weight": 1
+          }
+        ]
       },
       {
-        "element": {
-          "type": "origins:execute_command",
-          "command": "summon minecraft:sheep ~ ~ ~"
-        },
-        "weight": 5
-      },
-      {
-        "element": {
-          "type": "origins:execute_command",
-          "command": "summon minecraft:chicken ~ ~ ~"
-        },
-        "weight": 5
-      },
-      {
-        "element": {
-          "type": "origins:execute_command",
-          "command": "summon minecraft:fox ~ ~ ~"
-        },
-        "weight": 3
-      },
-      {
-        "element": {
-          "type": "origins:execute_command",
-          "command": "summon minecraft:panda ~ ~ ~"
-        },
-        "weight": 5
-      },
-      {
-        "element": {
-          "type": "origins:execute_command",
-          "command": "summon minecraft:camel~ ~ ~"
-        },
-        "weight": 2
-      },
-      {
-        "element": {
-          "type": "origins:execute_command",
-          "command": "summon hamsters:hamster ~ ~ ~"
-        },
-        "weight": 1
+        "type": "origins:equipped_item_action",
+        "equipment_slot": "offhand",
+        "action": {
+          "type": "origins:consume",
+          "amount": 4
+        }
       }
     ]
   }
