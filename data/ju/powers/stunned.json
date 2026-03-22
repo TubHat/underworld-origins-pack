@@ -1,0 +1,66 @@
+{
+    "type": "origins:prevent_death",
+    "name": "Soul Binder",
+    "description": "Once killed, your titanium resolve will prevent your conciousness from leaving. You will enter a short hibernation, invulnerable during it and recover to full health. Whether you are a walking corpse or not is a subject of debate.",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:apply_effect",
+                "effects": [
+                    {
+                        "effect": "minecraft:blindness",
+                        "amplifier": 1,
+                        "duration": 600
+                    },
+                    {
+                        "effect": "minecraft:resistance",
+                        "duration": 600,
+                        "amplifier": 4
+                    },
+                    {
+                        "effect": "minecraft:jump_boost",
+                        "amplifier": 200,
+                        "duration": 600
+                    },
+                    {
+                        "effect": "minecraft:slowness",
+                        "amplifier": 14,
+                        "duration": 600
+                    },
+                    {
+                        "effect": "minecraft:regeneration",
+                        "amplifier": 1,
+                        "duration": 600
+                    }
+                ]
+            },
+            {
+                "type": "origins:choice",
+                "actions": [
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @a[distance=0..30] {\"text\":\"JU: That... stung a little.\",\"italic\":true,\"color\":\"dark_purple\"}"
+                        },
+                        "weight": 1
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @a[distance=0..30] {\"text\":\"JU: Not nearly enough to stop me.\",\"italic\":true,\"color\":\"dark_purple\"}"
+                        },
+                        "weight": 1
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "command": "tellraw @a[distance=0..30] {\"text\":\"JU: I would rather you don't scratch my armor. It cost a fortune.\",\"italic\":true,\"color\":\"dark_purple\"}"
+                        },
+                        "weight": 1
+                    }
+                ]
+            }
+        ]
+    }
+}

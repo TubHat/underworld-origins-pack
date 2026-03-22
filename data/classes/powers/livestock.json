@@ -1,5 +1,7 @@
 {
   "type": "origins:active_self",
+  "name": "Livestock Cache",
+  "description": "When holding 4 diamonds in off hand, press sneak+interact key to summon a random domestic animal. Consuming the diamond in the process.",
   "key": "key.use",
   "condition": {
     "type": "origins:and",
@@ -12,7 +14,8 @@
           "conditions": [
             {
               "type": "origins:amount",
-              "amount": 4
+              "comparison": ">=",
+              "compare_to": 4
             },
             {
               "type": "origins:ingredient",

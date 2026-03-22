@@ -8,7 +8,10 @@
         "mutant:mutant",
         "mutant:felanth",
         "mutant:lithari",
-        "mutant:decapodian"
+        "mutant:decapodian",
+        "mutant:botani",
+
+        "ju:ju"
     ],
     "enabled": true,
     "order": 1

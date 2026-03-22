@@ -1,0 +1,13 @@
+{
+    "type": "origins:resource",
+    "name": "Nutrients",
+    "description": "You have a nutrients gauge. In order to use your powers you must spend some of it. Recover nutrients by rooting yourself to the ground. Ensure it remains above 0 or you will get weak.",
+    "min": 0,
+    "max": 40,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+        "bar_index": 9
+    },
+    "start_value": 10
+}

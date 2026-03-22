@@ -2,24 +2,31 @@
     "name": "In a blink",
     "description": "You can use your feline agility to suddenly appear behind the closest entity in proximity. press primary while sneaking.",
     "type": "origins:multiple",
-    "invis":
-    {
+    "tag": {
+        "type": "origins:action_on_callback",
+        "entity_action_gained": {
+            "type": "origins:execute_command",
+            "command": "tag @s add felanth"
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "tag @s remove felanth"
+        }
+    },
+    "invis": {
         "type": "origins:resource",
         "min": 0,
         "max": 1,
         "start_value": 0,
-        "hud_render":
-        {
+        "hud_render": {
             "should_render": false,
             "sprite_location": "origins:textures/gui/resource_bar.png"
         }
     },
-    "ghost":
-    {
+    "ghost": {
         "type": "origins:invisibility",
         "render_armor": false,
-        "condition":
-        {
+        "condition": {
             "type": "origins:resource",
             "inverted": false,
             "comparison": "==",
@@ -27,18 +34,15 @@
             "compare_to": 1
         }
     },
-    "activate":
-    {
+    "activate": {
         "type": "origins:active_self",
         "cooldown": 200,
-        "hud_render":
-        {
+        "hud_render": {
             "should_render": true,
             "sprite_location": "origins:textures/gui/resource_bar.png",
             "bar_index": 6
         },
-        "entity_action":
-        {
+        "entity_action": {
             "type": "origins:and",
             "actions": [
                 {
@@ -57,15 +61,23 @@
                     "command": "playsound minecraft:block.wool.fall player @a[distance=..10] ~ ~ ~ .5 0"
                 },
                 {
-                    "type": "origins:execute_command",
-                    "permission_level": 4,
-                    "command": "execute at @e[distance=0.1..15,type=!minecraft:area_effect_cloud,type=!minecraft:armor_stand,type=!minecraft:end_crystal,type=!minecraft:evoker_fangs,type=!minecraft:fishing_bobber,type=!minecraft:item_frame,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:painting,type=!minecraft:arrow,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_pearl,type=!minecraft:experience_bottle,type=!minecraft:eye_of_ender,type=!minecraft:fireball,type=!minecraft:firework_rocket,type=!minecraft:llama_spit,type=!minecraft:potion,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:snowball,type=!minecraft:spectral_arrow,type=!minecraft:trident,type=!minecraft:wither_skull,type=!minecraft:boat,type=!minecraft:chest_minecart,type=!minecraft:command_block_minecart,type=!minecraft:furnace_minecart,type=!minecraft:hopper_minecart,type=!minecraft:minecart,type=!minecraft:spawner_minecart,type=!minecraft:tnt_minecart,type=!minecraft:falling_block,type=!minecraft:tnt,type=!minecraft:experience_orb,type=!minecraft:item,limit=1,sort=nearest] run tp @s ^ ^0.5 ^-2.5 facing entity @e[distance=..2,type=!minecraft:area_effect_cloud,type=!minecraft:armor_stand,type=!minecraft:end_crystal,type=!minecraft:evoker_fangs,type=!minecraft:fishing_bobber,type=!minecraft:item_frame,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:painting,type=!minecraft:arrow,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_pearl,type=!minecraft:experience_bottle,type=!minecraft:eye_of_ender,type=!minecraft:fireball,type=!minecraft:firework_rocket,type=!minecraft:llama_spit,type=!minecraft:potion,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:snowball,type=!minecraft:spectral_arrow,type=!minecraft:trident,type=!minecraft:wither_skull,type=!minecraft:boat,type=!minecraft:chest_minecart,type=!minecraft:command_block_minecart,type=!minecraft:furnace_minecart,type=!minecraft:hopper_minecart,type=!minecraft:minecart,type=!minecraft:spawner_minecart,type=!minecraft:tnt_minecart,type=!minecraft:falling_block,type=!minecraft:tnt,type=!minecraft:experience_orb,type=!minecraft:item,limit=1,sort=nearest] feet"
+                    "type": "origins:raycast",
+                    "entity": true,
+                    "distance": 15,
+                    "block": false,
+                    "fluid_handling": "any",
+                    "bientity_condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:living"
+                        }
+                    },
+                    "command_at_hit": "execute as @e[limit=1,sort=nearest] at @p[tag=felanth] run tp @s ^ ^ ^-1.2 facing entity @s feet"
                 },
                 {
                     "type": "origins:delay",
                     "ticks": 5,
-                    "action":
-                    {
+                    "action": {
                         "type": "origins:change_resource",
                         "resource": "*:*_invis",
                         "change": -1
@@ -73,26 +85,11 @@
                 }
             ]
         },
-        "condition":
-        {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:sneaking",
-                    "inverted": false
-                },
-                {
-                    "type": "origins:command",
-                    "inverted": false,
-                    "comparison": ">=",
-                    "compare_to": 1,
-                    "permission_level": 4,
-                    "command": "execute if entity @e[distance=0.1..15,type=!minecraft:area_effect_cloud,type=!minecraft:armor_stand,type=!minecraft:end_crystal,type=!minecraft:evoker_fangs,type=!minecraft:fishing_bobber,type=!minecraft:item_frame,type=!minecraft:leash_knot,type=!minecraft:lightning_bolt,type=!minecraft:painting,type=!minecraft:arrow,type=!minecraft:dragon_fireball,type=!minecraft:egg,type=!minecraft:ender_pearl,type=!minecraft:experience_bottle,type=!minecraft:eye_of_ender,type=!minecraft:fireball,type=!minecraft:firework_rocket,type=!minecraft:llama_spit,type=!minecraft:potion,type=!minecraft:shulker_bullet,type=!minecraft:small_fireball,type=!minecraft:snowball,type=!minecraft:spectral_arrow,type=!minecraft:trident,type=!minecraft:wither_skull,type=!minecraft:boat,type=!minecraft:chest_minecart,type=!minecraft:command_block_minecart,type=!minecraft:furnace_minecart,type=!minecraft:hopper_minecart,type=!minecraft:minecart,type=!minecraft:spawner_minecart,type=!minecraft:tnt_minecart,type=!minecraft:falling_block,type=!minecraft:tnt,type=!minecraft:experience_orb,type=!minecraft:item,limit=1,sort=nearest]"
-                }
-            ]
+        "condition": {
+            "type": "origins:sneaking",
+            "inverted": false
         },
-        "key":
-        {
+        "key": {
             "key": "key.origins.primary_active"
         }
     }

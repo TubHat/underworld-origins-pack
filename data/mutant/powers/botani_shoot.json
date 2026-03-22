@@ -1,0 +1,49 @@
+{
+    "type": "origins:active_self",
+    "cooldown": 20,
+    "name": "Shoot Root",
+    "description": "Shoot out root tendrils in the direction you are looking at, reaching upto 20 blocks. On successful hit, damage the target slightly and bind them for 3 seconds",
+    "key": {
+        "key": "key.origins.secondary_active",
+        "continuous": true
+    },
+    "hud_render": {
+        "should_render": false
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "mutant:botani_nutrients",
+        "compare_to": 2,
+        "comparison": ">="
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:change_resource",
+                "resource": "mutant:botani_nutrients",
+                "change": -3
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "block.vine.break",
+                "volume": 2,
+                "pitch": 0.5
+            },
+            {
+                "type": "origins:raycast",
+                "distance": 20,
+                "block": false,
+                "entity": true,
+                "shape_type": "visual",
+                "fluid_handling": "none",
+                "before_action": {
+                    "type": "origins:swing_hand",
+                    "hand": "MAIN_HAND"
+                },
+                "command_at_hit": "function mutant:botani_bind",
+                "command_along_ray": "particle dust 0.8 0.2 0.2 0.7 ~ ~ ~ 0.1 0.1 0.1 1 1"
+            }
+        ]
+    }
+}

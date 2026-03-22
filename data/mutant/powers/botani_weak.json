@@ -1,0 +1,40 @@
+{
+    "type": "origins:multiple",
+    "name": "Weak",
+    "description": "You are physically not as adept as a regular human, 40% reduced damage from non gun sources",
+    "no_nutrients": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effects": [
+                {
+                    "effect": "slowness",
+                    "amplifier": 1,
+                    "duration": 40
+                },
+                {
+                    "effect": "weakness",
+                    "amplifier": 1,
+                    "duration": 40
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mutant:botani_nutrients",
+            "compare_to": 0,
+            "comparison": "=="
+        }
+    },
+    "weak_phys": {
+        "type": "origins:attribute",
+        "modifers": [
+            {
+                "attribute": "minecraft:generic.attack_damage",
+                "value": -0.4,
+                "operation": "multiply_base"
+            }
+        ]
+    }
+}

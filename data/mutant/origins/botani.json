@@ -1,0 +1,29 @@
+{
+    "name": "Botani",
+    "description": "Plant guy",
+    "unchoosable": true,
+    "powers": [
+        "utility:trapped",
+        "utility:carcass",
+        "utility:captor",
+        "utility:capture",
+        "utility:travel_surface",
+        "utility:surface",
+        "utility:class_change",
+        "utility:origin_change",
+        
+        "mutant:botani_nutrients",
+        "mutant:botani_rooted",
+        "mutant:botani_shoot",
+        "mutant:botani_teleport",
+        "mutant:botani_heal",
+        "mutant:botani_nimble",
+        "mutant:botani_hue",
+        "mutant:botani_weak",
+        "mutant:mutant_fall_break"
+    ],
+    "icon": {
+        "item": "minecraft:respawn_anchor"
+    },
+    "impact": 3
+}

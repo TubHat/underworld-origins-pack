@@ -19,14 +19,25 @@
                 {
                     "type": "origins:actor_condition",
                     "condition": {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:ingredient",
-                            "ingredient": {
-                                "item": "butchery:netherite_skinning_knife"
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "butchery:netherite_skinning_knife"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "ju:execute_cd",
+                                "compare_to": 0,
+                                "comparison": "=="
                             }
-                        }
+                        ]
                     }
                 },
                 {
@@ -44,42 +55,47 @@
             "actions": [
                 {
                     "type": "origins:actor_action",
-                    "entity_action": {
+                    "action": {
                         "type": "origins:and",
                         "actions": [
                             {
                                 "type": "origins:execute_command",
-                                "command": "function JU:decapitate"
+                                "command": "function ju:decapitate"
                             },
                             {
                                 "type": "origins:delay",
                                 "ticks": 80,
                                 "action": {
                                     "type": "origins:execute_command",
-                                    "command": "function:JU_decapitate_finish"
+                                    "command": "function ju:decapitate_finish"
                                 }
+                            },
+                            {
+                                "type": "origins:trigger_cooldown",
+                                "power": "ju:execute_cd"
                             }
                         ]
                     }
                 },
                 {
                     "type": "origins:target_action",
-                    "entity_action": {
+                    "action": {
                         "type": "origins:and",
                         "actions": [
                             {
                                 "type": "origins:execute_command",
-                                "command": "function JU:decapitate_target"
+                                "command": "function ju:decapitate_target"
                             },
                             {
                                 "type": "origins:delay",
-                                "ticks": 20,
+                                "ticks": 80,
                                 "action": {
                                     "type": "origins:and",
-                                    "actions":[
+                                    "actions": [
                                         {
                                             "type": "origins:damage",
-                                            "amount": 99
+                                            "amount": 99,
+                                            "damage_type": "minecraft:player_attack"
                                         },
                                         {
                                             "type": "origins:play_sound",
