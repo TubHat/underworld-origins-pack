@@ -1,0 +1,49 @@
+{
+    "type": "origins:target_action_on_hit",
+    "hidden": true,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "function utility:captured"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "tellraw @s {\"text\":\"I have been captured...\",\"color\":\"dark_red\"}"
+            }
+        ]
+    },
+    "target_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:player"
+            },
+            {
+                "type": "origins:health",
+                "compare_to": 4,
+                "comparison": "<="
+            },
+            {
+                "type": "origins:power",
+                "power": "utility:captured",
+               "inverted": true 
+            }
+        ]
+    },
+    "damage_condition": {
+        "type": "origins:attacker",
+        "entity_condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "farmersdelight:rope"
+                }
+            }
+        }
+    }
+}

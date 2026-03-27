@@ -1,0 +1,1 @@
+give @s amethyst_shard{display:{Name:'[{"text":"Embroidered Amethyst","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Currency used in the Federal provinces","italic":false}]']},Enchantments:[{}]}

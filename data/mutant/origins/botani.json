@@ -1,0 +1,31 @@
+{
+    "name": "Botani",
+    "description": "Mutants that spent excessive time near irradiated vegetation are observed to have plant like features. Botani have root tendrils for hind limbs and have a woody texture. They cannot consume any meat and their primary source of nutrition is directly from underground minerals.",
+    "unchoosable": true,
+    "powers": [
+        "utility:trapped",
+        "utility:carcass",
+        "utility:captor",
+        "utility:capture",
+        "utility:travel_surface",
+        "utility:surface",
+        "utility:class_change",
+        "utility:origin_change",
+        
+        "mutant:botani_nutrients",
+        "mutant:botani_rooted",
+        "mutant:botani_shoot",
+        "mutant:botani_teleport",
+        "mutant:botani_heal",
+        "mutant:botani_nimble",
+        "mutant:botani_hue",
+        "mutant:botani_weak",
+        "origins:vegetarian",
+        "mutant:devolve",
+        "mutant:mutant_fall_break"
+    ],
+    "icon": {
+        "item": "minecraft:oak_sapling"
+    },
+    "impact": 3
+}

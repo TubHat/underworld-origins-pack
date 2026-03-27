@@ -1,0 +1,47 @@
+{
+  "type": "origins:multiple",
+  "name": "Lumberjack and Excavator",
+  "description": "Break logs much faster when using axes and shovel much faster",
+  "a": {
+    "type": "origins:modify_break_speed",
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "minecraft:shovels"
+        }
+      }
+    },
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:mineable/shovel"
+    },
+    "modifier": {
+      "operation": "multiply_base_multiplicative",
+      "value": 0.5
+    }
+  },
+  "b": {
+    "type": "origins:modify_break_speed",
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "minecraft:axes"
+        }
+      }
+    },
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:mineable/axe"
+    },
+    "modifier": {
+      "operation": "multiply_base_multiplicative",
+      "value": 0.5
+    }
+  }
+}

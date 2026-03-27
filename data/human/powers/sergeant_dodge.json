@@ -1,0 +1,62 @@
+{
+    "type": "origins:multiple",
+    "name": "Dodge Roll",
+    "description": "Perform a dodge roll in the direction you are looking at, covering short distance and negating all damage for a split second.",
+    "pounce": {
+        "type": "origins:active_self",
+        "cooldown": 200,
+        "hud_render": {
+          "should_render":true,
+          "sprite_location":"origins:textures/gui/community/huang/resource_bar_01.png",
+          "bar_index": 3
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.ender_dragon.flap",
+					"volume": 0.4,
+					"pitch": 2
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:resistance",
+                        "show_particles": false,
+                        "show_icon": false,
+                        "amplifier": 4,
+                        "duration": 30
+                    }
+                },
+                {
+                    "type": "origins:spawn_particles",
+                    "particle": "minecraft:smoke",
+                    "count": 200,
+                    "speed": 0.0,
+                    "force": true,
+                    "spread": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": 3.0
+                    }
+                },
+                {
+                    "type": "origins:add_velocity",
+                    "z": 1.5,
+                    "space": "local"
+                },
+                {
+                    "type": "origins:add_velocity",
+                    "y": 0.3,
+                    "space": "world"
+                }
+            ]
+        },
+        "key": {
+            "key":"secondary",
+            "continuous": false
+        }
+    }
+    
+}

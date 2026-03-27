@@ -1,0 +1,20 @@
+{
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "name": "Adrenaline",
+    "description": "When nearing death, you will gain increased movement speed.",
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effect": {
+            "effect": "speed",
+            "duration": 40,
+            "show_particles": false,
+            "show_icon": false
+        }
+    },
+    "condition": {
+        "type": "origins:health",
+        "comparison": "<",
+        "compare_to": 8
+    }
+}

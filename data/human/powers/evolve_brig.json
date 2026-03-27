@@ -1,0 +1,50 @@
+{
+	"type": "origins:active_self",
+	"key": "key.attack",
+	"name": "Gain Reknown",
+	"description": "In order to be promoted further, you must gain reknown. When holding 64 diamonds in offhand and a beacon in mainhand, press attack key while sneaking to donate and gain reknown and be promoted to Brigadier.",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "function human:brig"
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "offhand",
+				"item_condition": {
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:amount",
+							"comparison": "==",
+							"compare_to": 64
+						},
+						{
+							"type": "origins:ingredient",
+							"ingredient": {
+								"item": "diamond"
+							}
+						}
+					]
+				}
+			},
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "mainhand",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "beacon"
+					}
+				}
+			},
+			{
+				"type": "origins:sneaking"
+			}
+		]
+	},
+	"cooldown": 20,
+	"hidden": false
+}

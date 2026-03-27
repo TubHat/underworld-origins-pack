@@ -1,0 +1,13 @@
+{
+    "pack": {
+        "name": "Crabsquid",
+        "id": "crabsquid",
+        "pack_format": 15,
+        "version": "1.1.2",
+        "authors": [
+            "KuDoR",
+            "Idea by uzu"
+        ],
+        "description": "SUBNAUTICA!"
+    }
+}

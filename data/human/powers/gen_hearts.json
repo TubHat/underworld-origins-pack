@@ -1,0 +1,10 @@
+{
+    "type": "origins:attribute",
+    "name": "Excess Vitality",
+    "description": "You have become something that could possibly not be human, Inhuman vigour granted +3 hearts.",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 6
+    }
+}

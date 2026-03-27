@@ -1,0 +1,38 @@
+{
+    "type": "origins:modify_damage_dealt",
+    "name": "Backstab",
+    "description": "Deal 5x damage to entities when attacking from behind provided they are standing still (stacks with backstabbing enchant)",
+    "bientity_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:relative_rotation",
+                "actor_rotation": "head",
+                "target_rotation": "body",
+                "comparison": ">=",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:target_condition",
+                "condition": {
+                    "inverted": true,
+                    "type": "origins:moving"
+                }
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "mutant:knives"
+            }
+        }
+    },
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 4
+    }
+}

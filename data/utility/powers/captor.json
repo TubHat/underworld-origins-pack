@@ -1,0 +1,36 @@
+{
+	"type": "origins:active_self",
+	"hidden": true,
+	"key": "key.attack",
+	"cooldown": 10,
+	"hud_render": {
+		"should_render": false
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "mainhand",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "farmersdelight:rope"
+					}
+				}
+			},
+			{
+				"type": "origins:sneaking"
+			},
+			{
+				"type": "origins:power",
+				"power": "utility:captured",
+				"inverted": true
+			}
+		]
+	},
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "tp @p[tag=captured, distance=1..15] @s"
+	}
+}

@@ -1,0 +1,100 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "fungus": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:give",
+            "stack": {
+                "item": "minecraft:paper",
+                "tag": "{display:{Name:'[{\"text\":\"Note\",\"italic\":false,\"color\":\"green\"}]',Lore:['[{\"text\":\"My insides feel weird..\",\"italic\":false}]']}}"
+            }
+        },
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "warden": {
+        "type": "origins:self_action_on_kill",
+        "target_condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:warden"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mutant:evolve_botani_fungus",
+            "compare_to": 1,
+            "comparison": "=="
+        },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function mutant:evolve_botani"
+        }
+    },
+    "eat_fungus": {
+        "type": "origins:active_self",
+        "key": "key.attack",
+        "cooldown": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "mutant:evolve_botani_fungus",
+                    "change": 1
+                },
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "offhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.player.burp"
+                },
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "mainhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:warped_fungus"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:crimson_fungus"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    }
+}

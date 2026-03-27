@@ -1,0 +1,119 @@
+{
+	"type": "origins:multiple",
+	"hidden": true,
+	"tagging": {
+		"type": "origins:action_on_callback",
+		"entity_action_gained": {
+			"type": "origins:execute_command",
+			"command": "attribute @s taa:bullet_gundamage base set 0"
+		},
+		"entity_action_respawned": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "power remove @s utility:captured"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "attribute @s taa:bullet_gundamage base set 1"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "tag @s remove captured"
+				}
+			]
+		}
+	},
+	"weak": {
+		"type": "origins:action_over_time",
+		"interval": 40,
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effects": [
+				{
+					"effect": "slowness",
+					"amplifier": 1,
+					"show_particles": false,
+					"duration": 60
+				},
+				{
+					"effect": "weakness",
+					"amplifier": 4,
+					"show_particles": false,
+					"duration": 60
+				}
+			]
+		}
+	},
+	"gun_dmg": {
+		"type": "origins:attribute",
+		"modifiers": [
+			{
+				"attribute": "taa:ads_time",
+				"name": "bad aim speed",
+				"value": 0.3,
+				"operation": "multiply_total"
+			},
+			{
+				"attribute": "taa:reload_time",
+				"name": "bad reload speed",
+				"value": 0.3,
+				"operation": "multiply_total"
+			},
+			{
+				"attribute": "taa:inaccuracy",
+				"name": "bad aim",
+				"value": 1,
+				"operation": "multiply_total"
+			},
+			{
+				"attribute": "taa:ads_time",
+				"name": "bad aim speed",
+				"value": 0.3,
+				"operation": "multiply_total"
+			},
+			{
+				"attribute": "taa:bullet_gundamage_launcher",
+				"value": -1,
+				"operation": "multiply_total"
+			},
+			{
+				"attribute": "taa:bullet_gundamage_rifle",
+				"name": "bad gun dmg",
+				"value": -1,
+				"operation": "multiply_total"
+			},
+			{
+				"attribute": "taa:bullet_gundamage_pistol",
+				"name": "bad gun dmg",
+				"value": -1,
+				"operation": "multiply_total"
+			},
+			{
+				"attribute": "taa:bullet_gundamage_lmg",
+				"name": "bad gun dmg",
+				"value": -1,
+				"operation": "multiply_total"
+			},
+			{
+				"attribute": "taa:bullet_gundamage_shotgun",
+				"name": "bad gun dmg",
+				"value": -1,
+				"operation": "multiply_total"
+			},
+			{
+				"attribute": "taa:bullet_gundamage_smg",
+				"name": "bad gun dmg",
+				"value": -1,
+				"operation": "multiply_total"
+			},
+			{
+				"attribute": "taa:bullet_gundamage_sniper",
+				"name": "bad gun dmg",
+				"value": -1,
+				"operation": "multiply_total"
+			}
+		]
+	}
+}

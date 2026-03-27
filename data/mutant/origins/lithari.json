@@ -1,0 +1,31 @@
+{
+	"powers": [
+		"utility:trapped",
+		"utility:carcass",
+        "utility:travel_surface",
+        "utility:surface",
+		"utility:captor",
+        "utility:capture",
+        "utility:class_change",
+        "utility:origin_change",
+		
+		"mutant:mutant_exert",
+		"mutant:lithari_toughen",
+		"mutant:lithari_throw",
+		"mutant:lithari_swim",
+		"mutant:lithari_toggle_swim",
+		"mutant:lithari_armor",
+		"mutant:mutant_fall_break",
+		"mutant:lithari_slow",
+		"mutant:lithari_rock_eat",
+		"origins:no_shield",
+		"mutant:lithari_restrict_armor",
+		"mutant:devolve"
+	],
+	"icon": "minecraft:cobblestone",
+	"order": 10,
+	"impact": 3,
+	"unchoosable": true,
+	"name": "Lithari",
+	"description": "Mutants who have rock like skin partially covered in extremely hard stone like substance. They dislike moving for extended periods of time as it is straining. Litharis have evolved to have drastically different physiology, resulting in them not being able to digest anything but rocks and minerals"
+}

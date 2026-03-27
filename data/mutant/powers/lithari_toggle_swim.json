@@ -1,0 +1,78 @@
+{
+    "hidden": false,
+    "name": "Rock Crawl",
+    "description": "You can craw through stone like blocks at the cost of increased exhaustion. Toggle with tertiary key",
+    "type": "origins:active_self",
+    "cooldown": 20,
+    "key": "key.origins.tertiary_active",
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:power",
+                            "power": "mutant:lithari_swim"
+                        },
+                        {
+                            "type": "origins:living"
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:block.stone.break"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "/tellraw @s {\"text\":\"I will NOT crawl\",\"color\":\"dark_green\"}"
+                        },
+                        {
+                            "type": "origins:revoke_power",
+                            "power": "mutant:lithari_swim",
+                            "source": "mutant:lithari"
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:power",
+                            "power": "mutant:lithari_swim",
+                            "inverted": true
+                        },
+                        {
+                            "type": "origins:living"
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:play_sound",
+                            "sound": "minecraft:block.stone.place"
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "/tellraw @s {\"text\":\"I will crawl\",\"color\":\"dark_green\"}"
+                        },
+                        {
+                            "type": "origins:grant_power",
+                            "power": "mutant:lithari_swim",
+                            "source": "mutant:lithari"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

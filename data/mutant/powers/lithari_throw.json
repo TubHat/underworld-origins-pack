@@ -1,0 +1,80 @@
+{
+	"name": "Rock Throw",
+	"description": "Mash stone blocks and throw them when sneaking and holding in offhand, with enough force to cause small damage but stun for a jiffy",
+	"type": "origins:fire_projectile",
+	"entity_type": "minecraft:arrow",
+	"cooldown": 20,
+	"speed": 3,
+	"hud_render": {
+		"should_render": false
+	},
+	"count": 4,
+	"divergence": 2,
+	"interval": 5,
+	"tag": "{pickup:0,Potion:\"minecraft:awkward\",CustomPotionEffects:[{Id:2,Amplifier:0,Duration:40,ShowParticles:0b},{Id:15,Amplifier:0,Duration:20}]}",
+	"key": {
+		"key": "key.use",
+		"continuous": true
+	},
+	"shooter_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:play_sound",
+				"sound": "minecraft:entity.ender_pearl.throw"
+			},
+			{
+				"type": "origins:equipped_item_action",
+				"equipment_slot": "offhand",
+				"action": {
+					"type": "origins:consume",
+					"amount": 1
+				}
+			}
+		]
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "offhand",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": [
+						{
+							"item": "cobblestone"
+						},
+						{
+							"item": "sandstone"
+						},
+						{
+							"item": "red_sandstone"
+						},
+						{
+							"item": "granite"
+						},
+						{
+							"item": "andesite"
+						},
+						{
+							"item": "deepslate"
+						},
+						{
+							"item": "cobbled_deepslate"
+						},
+						{
+							"item": "stone"
+						},
+						{
+							"item": "diorite"
+						}
+					]
+				}
+			},
+			{
+				"type": "origins:sneaking"
+			}
+		]
+	}
+}

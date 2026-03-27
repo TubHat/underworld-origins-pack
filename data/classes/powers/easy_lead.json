@@ -1,0 +1,27 @@
+{
+  "name": "Easy Lead",
+  "description": "You can craft lead from just intestines.",
+  "type": "origins:recipe",
+  "recipe": {
+    "id": "origins:easy_lead",
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "ss ",
+      "ss ",
+      "  s"
+    ],
+    "result": {
+      "item": "minecraft:lead"
+    },
+    "key": {
+      "s": [
+        {
+          "item": "butchery:intestines"
+        },
+        {
+          "item": "butchery:enderman_intestines"
+        }
+      ]
+    }
+  }
+}

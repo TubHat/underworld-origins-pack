@@ -1,0 +1,195 @@
+{
+  "type": "origins:multiple",
+  "name": "Cosmetics Crafting",
+  "description": "You can craft decorative things that others can't.",
+  "cobble_to_gravel": {
+    "type": "origins:recipe",
+    "recipe": {
+      "type": "minecraft:crafting_shapeless",
+      "id": "cobblestone_grave",
+      "ingredients": [
+        {
+          "item": "minecraft:cobblestone"
+        }
+      ],
+      "result": {
+        "item": "minecraft:gravel",
+        "count": 1
+      }
+    }
+  },
+  "deadbush": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "craft_deadbush",
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        " / ",
+        "///",
+        "C/C"
+      ],
+      "key": {
+        "/": {
+          "item": "minecraft:stick"
+        },
+        "C": {
+          "item": "minecraft:clay_ball"
+        }
+      },
+      "result": {
+        "item": "minecraft:dead_bush",
+        "count": 1
+      }
+    }
+  },
+  "sandbag_1": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "craft_sandbag_1",
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        " # ",
+        "#S#",
+        " # "
+      ],
+      "key": {
+        "#": {
+          "item": "farmersdelight:canvas"
+        },
+        "S": {
+          "item": "minecraft:sand"
+        }
+      },
+      "result": {
+        "item": "doomsday_decoration:sandbag",
+        "count": 1
+      }
+    }
+  },
+  "sandbag_2": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "craft_sandbag_2",
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        " # ",
+        "#S#",
+        " # "
+      ],
+      "key": {
+        "#": {
+          "item": "farmersdelight:canvas"
+        },
+        "S": {
+          "item": "minecraft:sand"
+        }
+      },
+      "result": {
+        "item": "doomsday_decoration:sandbag_2",
+        "count": 1
+      }
+    }
+  },
+  "sandbag_3": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "craft_sandbag_3",
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        " # ",
+        "#S#",
+        " # "
+      ],
+      "key": {
+        "#": {
+          "item": "farmersdelight:canvas"
+        },
+        "S": {
+          "item": "minecraft:sand"
+        }
+      },
+      "result": {
+        "item": "doomsday_decoration:sandbag_3",
+        "count": 1
+      }
+    }
+  },
+  "sandbag_4": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "craft_sandbag_4",
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        " # ",
+        "#S#",
+        " # "
+      ],
+      "key": {
+        "#": {
+          "item": "farmersdelight:canvas"
+        },
+        "S": {
+          "item": "minecraft:sand"
+        }
+      },
+      "result": {
+        "item": "doomsday_decoration:sandbag_4",
+        "count": 1
+      }
+    }
+  },
+  "sandbag_5": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "craft_sandbag_5",
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        " # ",
+        "#S#",
+        " # "
+      ],
+      "key": {
+        "#": {
+          "item": "farmersdelight:canvas"
+        },
+        "S": {
+          "item": "minecraft:sand"
+        }
+      },
+      "result": {
+        "item": "doomsday_decoration:sandbag_5",
+        "count": 1
+      }
+    }
+  },
+  "fluroscent_lamp_1": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "craft_fluroscent_lamp_1",
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        "#i#",
+        "RUR",
+        "#i#"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:iron_nugget"
+        },
+        "i": {
+          "item": "minecraft:iron_ingot"
+        },
+        "R": {
+          "item": "minecraft:redstone"
+        },
+        "U": {
+          "item": "minecraft:redstone_torch"
+        }
+      },
+      "result": {
+        "item": "doomsday_decoration:fluorescentlamp_1",
+        "count": 1
+      }
+    }
+  }
+}

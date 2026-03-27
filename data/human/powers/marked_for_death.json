@@ -1,0 +1,25 @@
+{
+    "type": "origins:multiple",
+    "fear_txt": {
+        "type": "origins:action_on_callback",
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "tellraw @a[distance=0..10] {\"text\":\"It's no longer watching...\",\"color\":\"red\"}"
+        }
+    },
+    "more_dmg": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 0.4
+        }
+    },
+    "take_off": {
+        "type": "origins:action_over_time",
+        "interval": 400,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s human:marked_for_death"
+        }
+    }
+}

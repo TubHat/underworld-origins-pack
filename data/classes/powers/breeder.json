@@ -1,0 +1,93 @@
+{
+  "type": "origins:active_self",
+  "name": "Fast Breeder",
+  "description": "When holding 16 of any crop type in main hand, press attack key while sneaking, to breed all domesticable entities in a 10 block radius. 2.5 minute cooldown",
+  "cooldown": 3000,
+  "hud_render": {
+    "should_render": false
+  },
+  "key": "key.attack",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:area_of_effect",
+        "radius": 10,
+        "bientity_action": {
+          "type": "origins:set_in_love"
+        }
+      },
+      {
+        "type": "origins:equipped_item_action",
+        "equipment_slot": "mainhand",
+        "action": {
+          "type": "origins:consume",
+          "amount": 16
+        }
+      }
+    ]
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:ingredient",
+              "ingredient": [
+                {
+                  "item": "wheat"
+                },
+                {
+                  "item": "potato"
+                },
+                {
+                  "item": "carrot"
+                },
+                {
+                  "item": "farmersdelight:cabbage"
+                },
+                {
+                  "item": "farmersdelight:tomato"
+                },
+                {
+                  "item": "beetroot"
+                },
+                {
+                  "item": "wheat_seeds"
+                },
+                {
+                  "item": "pumpkin_seeds"
+                },
+                {
+                  "item": "melon_seeds"
+                },
+                {
+                  "item": "beetroot_seeds"
+                },
+                {
+                  "item": "farmersdelight:cabbage_seeds"
+                },
+                {
+                  "item": "farmersdelight:tomato_seeds"
+                }
+              ]
+            },
+            {
+              "type": "origins:amount",
+              "compare_to": 16,
+              "comparison": ">="
+            }
+          ]
+        }
+      },
+      {
+        "type": "origins:sneaking"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "origins:self_action_on_kill",
+    "name": "Defy Order",
+    "description": "Kill federal soldiers to earn currency [cooldown].",
+    "hud_render": {
+        "should_render": false
+    },
+    "cooldown": 6000,
+    "target_condition": {
+        "type": "origins:power",
+        "power": "factions:federation_team"
+    },
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "function factions:rebel_currency"
+    }
+}

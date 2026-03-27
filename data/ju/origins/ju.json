@@ -1,0 +1,16 @@
+{
+    "name": "John Underworld",
+    "description": "The Cataclysmic Catalyst. Your origins are unknown, you seek to overthrow the tyrrany of the generals.\nYou are the self proclaimed strongest.",
+    "powers": [
+        "ju:execute",
+        "ju:invis",
+        "ju:gun",
+        "ju:on_kill",
+        "ju:health",
+        "ju:break_speed",
+        "ju:stunned"
+    ],
+    "icon": "flashlight:night_vision_goggles_helmet",
+    "impact": 3,
+    "unchoosable": true
+}

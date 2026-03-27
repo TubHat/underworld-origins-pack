@@ -1,0 +1,7 @@
+{
+    "name": "Chlorophyll",
+    "description": "Presence of chlorophyll in your skin gives you a slight green hue",
+    "type": "origins:model_color",
+    "red": 0.7,
+    "blue": 0.7
+}

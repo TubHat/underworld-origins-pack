@@ -1,0 +1,13 @@
+{
+    "name": "Scavenger",
+    "description": "You are good at finding food and making good of it.",
+    "unchoosable": false,
+    "powers": [
+        "classes:food_loot",
+        "classes:foodie",
+        "classes:heal_food"
+    ],
+    "icon": {
+        "item": "minecraft:bundle"
+    }
+}

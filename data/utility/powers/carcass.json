@@ -1,0 +1,14 @@
+{
+    "type": "origins:self_action_on_kill",
+    "hidden": true,
+    "target_condition": {
+        "type": "origins:entity_type",
+        "entity_type": "minecraft:ender_dragon"
+    },
+    "entity_action": {
+        "type": "origins:give",
+        "stack": {
+            "item": "butchery:ender_dragon_carcass"
+        }
+    }
+}

@@ -1,0 +1,1 @@
+give @s farmersdelight:smoked_ham{display:{Name:'[{"text":"Gold","italic":false,"color":"gold"},{"text":" Glazed","italic":false,"color":"gold"},{"text":" ","italic":false,"color":"gold"},{"text":"Ham","italic":false,"color":"gold"}]',Lore:['[{"text":"Currency used in the Rebel markets","italic":false}]']},Enchantments:[{}]}

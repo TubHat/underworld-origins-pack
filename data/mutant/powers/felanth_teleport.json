@@ -1,0 +1,68 @@
+{
+    "name": "In a blink",
+    "description": "You can use your feline agility to suddenly appear behind the closest entity in proximity. press primary while sneaking.",
+    "type": "origins:multiple",
+    "tag": {
+        "type": "origins:action_on_callback",
+        "entity_action_gained": {
+            "type": "origins:execute_command",
+            "command": "tag @s add felanth"
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "tag @s remove felanth"
+        }
+    },
+    "activate": {
+        "type": "origins:active_self",
+        "cooldown": 200,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 6
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_invis",
+                    "change": 1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "particle minecraft:poof ~ ~.5 ~ .3 .5 .3 0 50 normal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "playsound minecraft:block.wool.fall player @a[distance=..10] ~ ~ ~ .5 0"
+                },
+                {
+                    "type": "origins:raycast",
+                    "entity": true,
+                    "distance": 15,
+                    "block": false,
+                    "fluid_handling": "any",
+                    "bientity_condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:in_tag",
+                            "tag": "mutant:no_tp",
+                            "inverted": true
+                        }
+                    },
+                    "command_at_hit": "execute at @e[sort=nearest,limit=1] as @e[sort=nearest, limit=1] run tp @p[tag=felanth] ^ ^ ^-1.2"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:sneaking",
+            "inverted": false
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        }
+    }
+}

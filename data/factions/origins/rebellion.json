@@ -1,0 +1,13 @@
+{
+    "name": "The Rebellion",
+    "description": "After the assassination of a general at the hands of \"JU\", group of like minded people wishing to overthrow the federation came together. Free the people from the clutches of the seven devils. Bring back individuality, Freedom. Fix the surface. PIERCE THE HEAVENS!",
+    "unchoosable": false,
+    "powers": [
+        "factions:rebel_kill_fed",
+        "factions:rebellion_team"
+    ],
+    "icon": {
+        "item": "miklos_mil_arm:helmetkaska_1myellowtape_helmet"
+    },
+    "impact": 1
+}

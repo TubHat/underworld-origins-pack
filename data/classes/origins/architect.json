@@ -1,0 +1,14 @@
+{
+    "name": "Architect",
+    "description": "You were an architect in the surface world, you are able to procure building skills more easily.",
+    "unchoosable": false,
+    "powers": [
+        "classes:crafting_table",
+        "classes:fast_break" ,
+        "classes:more_planks",
+        "classes:more_items"
+    ],
+    "icon": {
+        "item": "minecraft:scaffolding"
+    }
+}

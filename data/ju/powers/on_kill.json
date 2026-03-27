@@ -1,0 +1,99 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "target": {
+        "type": "origins:self_action_on_kill",
+        "cooldown": 20,
+        "target_condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:player"
+        },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function ju:die"
+        }
+    },
+    "voice": {
+        "type": "origins:self_action_on_kill",
+        "cooldown": 20,
+        "target_condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:player"
+        },
+        "entity_action": {
+            "type": "origins:choice",
+            "actions": [
+                {
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @a[distance=0..30] {\"text\":\"JU: Why even bother?\",\"italic\":true,\"color\":\"dark_purple\"}"
+                    },
+                    "weight": 1
+                },
+                {
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @a[distance=0..30] {\"text\":\"JU: You struggled… how admirable. How pointless.\",\"italic\":true,\"color\":\"dark_purple\"}"
+                    },
+                    "weight": 1
+                },
+                {
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @a[distance=0..30] {\"text\":\"JU: Rest now. The world will forget you faster than I will.\",\"italic\":true,\"color\":\"dark_purple\"}"
+                    },
+                    "weight": 1
+                },
+                {
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @a[distance=0..30] {\"text\":\"JU: Pathetic. Even your death lacked conviction.\",\"italic\":true,\"color\":\"dark_purple\"}"
+                    },
+                    "weight": 1
+                },
+                {
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @a[distance=0..30] {\"text\":\"JU: Curse me all you want in the afterlife, I'll move on, you won't\",\"italic\":true,\"color\":\"dark_purple\"}"
+                    },
+                    "weight": 1
+                },
+                {
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @a[distance=0..30] {\"text\":\"JU: Your resistance was… statistically insignificant.\",\"italic\":true,\"color\":\"dark_purple\"}"
+                    },
+                    "weight": 1
+                },
+                {
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @a[distance=0..30] {\"text\":\"JU: Your structural integrity is gravely compromised, might wanna get that checked.\",\"italic\":true,\"color\":\"dark_purple\"}"
+                    },
+                    "weight": 1
+                },
+                {
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @a[distance=0..30] {\"text\":\"JU: Your screams lost amplitude over time. A predictable trend in my slaughters.\",\"italic\":true,\"color\":\"dark_purple\"}"
+                    },
+                    "weight": 1
+                },
+                {
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @a[distance=0..30] {\"text\":\"JU: I calculated the probability of your chances... You will not be pleased to hear it.\",\"italic\":true,\"color\":\"dark_purple\"}"
+                    },
+                    "weight": 1
+                },
+                {
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "tellraw @a[distance=0..30] {\"text\":\"JU: All your energy dissipated into meaningless heat. That was your sum total worth.\",\"italic\":true,\"color\":\"dark_purple\"}"
+                    },
+                    "weight": 1
+                }
+            ]
+        }
+    }
+}

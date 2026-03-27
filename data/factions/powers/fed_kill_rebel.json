@@ -1,0 +1,17 @@
+{
+    "type": "origins:self_action_on_kill",
+    "name": "Purge Rebellion",
+    "description": "Kill rebels to earn currency",
+    "hud_render": {
+        "should_render": false
+    },
+    "cooldown": 6000,
+    "target_condition": {
+        "type": "origins:power",
+        "power": "factions:rebellion_team"
+    },
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "function factions:fed_currency"
+    }
+}

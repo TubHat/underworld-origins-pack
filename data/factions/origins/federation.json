@@ -1,0 +1,13 @@
+{
+    "name": "The Federation",
+    "description": "After mankind moved underground, The council of 7 generals formed the federation restoring \"Order\". You will be a soldier in the federation. Disciplined, strict, sophisticated. Crush the peace breaking rebellion! ORDER AND REDEMPTION!",
+    "unchoosable": false,
+    "powers": [
+        "factions:fed_kill_rebel",
+        "factions:federation_team"
+    ],
+    "icon": {
+        "item": "miklos_mil_arm:helmetkaska_1mbluetape_helmet"
+    },
+    "impact": 1
+}

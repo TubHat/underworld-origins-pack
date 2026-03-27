@@ -1,0 +1,10 @@
+{
+    "name": "Survivalist",
+    "description": "You exhaust 20% slower",
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "name": "Increased exhaustion",
+        "operation": "multiply_base",
+        "value": -0.20
+    }
+}

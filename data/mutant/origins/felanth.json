@@ -1,0 +1,32 @@
+{
+    "name": "Felanth",
+    "description": "Felanths are an abnormal form of mutation. The subject has the features of a feline. Felanths are known for their extremely violent tendencies treading the boundry between a mindless mutatated and a sentient mutant.",
+    "unchoosable": true,
+    "powers": [
+        "utility:trapped",
+        "utility:carcass",
+        "utility:captor",
+        "utility:capture",
+        "utility:travel_surface",
+        "utility:surface",
+        "utility:class_change",
+        "utility:origin_change",
+
+        "mutant:felanth_combo",
+        "mutant:felanth_pounce",
+        "mutant:felanth_teleport",
+        "mutant:felanth_claws",
+        "mutant:felanth_backstab",
+        "mutant:felanth_invis",
+        "mutant:felanth_falldmg",
+        "mutant:felanth_primitive",
+        "mutant:felanth_craving",
+        "mutant:felanth_restrict_armor",
+        "origins:nine_lives",
+        "mutant:devolve"
+    ],
+    "icon": {
+        "item": "minecraft:orange_wool"
+    },
+    "impact": 3
+}

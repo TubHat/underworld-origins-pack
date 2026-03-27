@@ -1,0 +1,30 @@
+{
+    "name": "General",
+    "description": "One of the main pillars of violence. A reason why war yet persists, You are an elite among elites, possessing immaculate leadership skills and a deathly craving for violence... Are you even human?",
+    "unchoosable": true,
+    "powers": [
+        "utility:trapped",
+        "utility:carcass",
+        "utility:capture",
+        "utility:captor",
+        "utility:travel_surface",
+        "utility:surface",
+        "utility:class_change",
+        "utility:origin_change",
+        
+        "human:gen_mark",
+        "human:sergeant_dodge",
+        "human:gen_directional_dash",
+        "human:gen_execute",
+        "human:gen_gun",
+        "human:gen_negate",
+        "human:gen_falldmg",
+        "human:gen_hearts",
+        "human:human_survivalist",
+        "human:human_adrenaline"
+    ],
+    "icon": {
+        "item": "miklos_mil_arm:helmetmaska_1shwhitestripes_helmet"
+    },
+    "impact": 1
+}

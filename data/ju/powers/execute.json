@@ -1,0 +1,119 @@
+{
+    "type": "origins:multiple",
+    "name": "Decapitate",
+    "description": "Right click with your Cerated karambit on players that have less than 10 hearts to give them a slow agonizing confirmed death. Doing so stuns both the target and you. Successful decapitation will restore your health to full.",
+    "cd": {
+        "type": "origins:cooldown",
+        "cooldown": 200,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 6,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png"
+        }
+    },
+    "decapitate": {
+        "type": "origins:action_on_entity_use",
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "butchery:netherite_skinning_knife"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "ju:execute_cd",
+                                "compare_to": 0,
+                                "comparison": "=="
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": "<",
+                        "compare_to": 20
+                    }
+                }
+            ]
+        },
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "function ju:decapitate"
+                            },
+                            {
+                                "type": "origins:delay",
+                                "ticks": 80,
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "function ju:decapitate_finish"
+                                }
+                            },
+                            {
+                                "type": "origins:trigger_cooldown",
+                                "power": "ju:execute_cd"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "function ju:decapitate_target"
+                            },
+                            {
+                                "type": "origins:delay",
+                                "ticks": 80,
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:damage",
+                                            "amount": 99,
+                                            "damage_type": "minecraft:player_attack"
+                                        },
+                                        {
+                                            "type": "origins:play_sound",
+                                            "sound": "butchery:hacksaw",
+                                            "volume": 2,
+                                            "pitch": 0.5
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle dust 1 0.1 0.1 0.5 ~ ~ ~ 0.5 0.5 0.5 1 500"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

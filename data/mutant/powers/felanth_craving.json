@@ -1,0 +1,61 @@
+{
+  "type": "origins:multiple",
+  "name": "Violent Cravings",
+  "description": "You get bored quickly if you are not inflicting pain. You will get sluggish if you don't kill for too long giving you slowness and weakness effect.",
+  "craving": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 50,
+    "start_value": 50,
+    "hud_render": {
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+      "bar_index": 6
+    }
+  },
+  "regen": {
+    "type": "origins:self_action_on_hit",
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "*:*_craving",
+      "change": 5
+    }
+  },
+  "reduce": {
+    "type": "origins:action_over_time",
+    "interval": 400,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_craving",
+      "comparison": ">",
+      "compare_to": 0 
+    },
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource":"*:*_craving",
+      "change": -1
+    }
+  },
+  "debuff": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:*_craving",
+      "comparison": "==",
+      "compare_to": 0 
+    },
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+        "effect": "slowness",
+        "duration": 30
+        },
+        {
+          "effect": "weakness",
+          "duration": 30
+        }
+      ]
+    }
+  }
+}

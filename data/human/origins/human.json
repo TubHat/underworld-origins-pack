@@ -1,0 +1,22 @@
+{
+    "name": "Human",
+    "description": "After the contamination of the surface, few true humans remain. You are a conscript or a civilian, forced to side with whatever faction.",
+    "powers": [
+        "utility:trapped",
+        "utility:carcass",
+        "utility:surface",
+        "utility:class_change",
+        "utility:capture",
+        "utility:captor",
+        "utility:origin_change",
+        
+        "human:human_survivalist",
+        "human:human_adrenaline",
+        "human:human_fall_break",
+        "human:evolve_sergeant"
+    ],
+    "icon": {
+        "item": "minecraft:player_head"
+    },
+    "impact": 3
+}

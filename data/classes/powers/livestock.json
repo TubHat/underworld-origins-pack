@@ -1,0 +1,101 @@
+{
+  "type": "origins:active_self",
+  "name": "Livestock Cache",
+  "description": "When holding 4 diamonds in off hand, press sneak+interact key to summon a random domestic animal. Consuming the diamond in the process.",
+  "key": "key.use",
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:equipped_item",
+        "equipment_slot": "offhand",
+        "item_condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:amount",
+              "comparison": ">=",
+              "compare_to": 4
+            },
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "minecraft:diamond"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "origins:sneaking"
+      }
+    ]
+  },
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:choice",
+        "actions": [
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:cow ~ ~ ~"
+            },
+            "weight": 5
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:sheep ~ ~ ~"
+            },
+            "weight": 5
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:chicken ~ ~ ~"
+            },
+            "weight": 5
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:fox ~ ~ ~"
+            },
+            "weight": 3
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:panda ~ ~ ~"
+            },
+            "weight": 5
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon minecraft:camel~ ~ ~"
+            },
+            "weight": 2
+          },
+          {
+            "element": {
+              "type": "origins:execute_command",
+              "command": "summon hamsters:hamster ~ ~ ~"
+            },
+            "weight": 1
+          }
+        ]
+      },
+      {
+        "type": "origins:equipped_item_action",
+        "equipment_slot": "offhand",
+        "action": {
+          "type": "origins:consume",
+          "amount": 4
+        }
+      }
+    ]
+  }
+}

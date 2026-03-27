@@ -1,0 +1,41 @@
+{
+    "type": "origins:multiple",
+    "name": "Full to Bursting",
+    "description": "Eating high quality food heals you 1 heart. Additionally, you recieve the comfort effect from all food items.",
+    "heal": {
+        "type": "origins:action_on_item_use",
+        "entity_action": {
+            "type": "origins:heal",
+            "amount": 2
+        },
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "classes:low_food"
+                    }
+                },
+                {
+                    "type": "origins:food"
+                }
+            ]
+        }
+    },
+    "comfort": {
+        "type": "origins:action_on_item_use",
+        "item_condition": {
+            "type": "origins:food"
+        },
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "farmersdelight:comfort",
+                "duration": 600,
+                "show_particles": false
+            }
+        }
+    }
+}

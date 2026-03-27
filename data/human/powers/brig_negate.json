@@ -1,0 +1,24 @@
+{
+    "type": "origins:modify_damage_taken",
+    "name": "Robust",
+    "description": "You are unfazed by attacks from entities that deal less than 2 hearts of damage, recieving no damage from them. [nanomachines so-]",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -1
+    },
+    "damage_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:amount",
+                "comparison": "<=",
+                "compare_to": 4
+            },
+            {
+                "type": "origins:name",
+                "name": "outOfWorld",
+                "inverted": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "points": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+        "start_value": 0,
+        "max_action": {
+            "type": "origins:execute_command",
+            "command": "function human:match_end"
+        }
+    },
+    "inc": {
+        "type": "origins:action_over_time",
+        "interval": 200,
+        "condition": {
+            "type": "origins:distance_from_coordinates",
+            "offset": {
+                "x": 68,
+                "y": 77,
+                "z": 1231
+            },
+            "shape": "sphere",
+            "comparison": "<=",
+            "compare_to": 10
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:block.note_block.cow_bell master @s ~ ~ ~ 0.1 2"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "human:cap_the_point_points",
+                    "change": 1
+                }
+            ]
+        }
+    }
+}

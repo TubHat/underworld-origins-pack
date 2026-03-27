@@ -1,0 +1,28 @@
+{
+  "type": "origins:active_self",
+  "name": "Professional Crafter",
+  "description": "Sneak attack when holding nothing in main hand to open crafting table without needing one.",
+  "key": "key.attack",
+  "cooldown": 20,
+  "entity_action": {
+    "type": "origins:crafting_table"
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:air"
+          }
+        }
+      },
+      {
+        "type": "origins:sneaking"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+		{
+	"powers": [
+		"utility:trapped",
+		"utility:carcass",
+		"utility:captor",
+        "utility:capture",
+        "utility:surface",
+        "utility:class_change",
+        "utility:origin_change",
+		
+		"mutant:mutant_exert",
+		"mutant:mutant_jump",
+		"mutant:mutant_health",
+		"mutant:evolve_lithari",
+		"mutant:evolve_dec",
+		"mutant:evolve_felanth",
+		"mutant:evolve_botani",
+		"mutant:mutant_fall_break"
+	],
+	"icon": "minecraft:green_dye",
+	"impact": 2,
+	"name": "Mutant",
+	"description": "You appear to be human, but something about you isn't right. It appears you have radiation poisoning. You feel like you can utilise the radiation in your system to evolve. [Evolutions are WIP.]"
+}

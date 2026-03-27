@@ -1,0 +1,117 @@
+{
+    "name": "Scavenge Food",
+    "description": "A small chance to obtain food items when killing certain mobs.",
+    "type": "origins:self_action_on_kill",
+    "target_condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:zombie"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:husk"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:skeleton"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:creeper"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:enderman"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:zombie"
+            },
+            {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:spider"
+            }
+        ]
+    },
+    "entity_action": {
+        "type": "origins:chance",
+        "chance": 0.1,
+        "action": {
+            "type": "origins:choice",
+            "actions": [
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:bundle",
+                            "tag": "{Items:[{id:\"minecraft:beetroot_soup\",Count:2}]}"
+                        }
+                    },
+                    "weight": 20
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:bundle",
+                            "tag": "{Items:[{id:\"rotten_flesh\",Count:4}]}"
+                        }
+                    },
+                    "weight": 10
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:bundle",
+                            "tag": "{Items:[{id:\"golden_apple\",Count:1}]}"
+                        }
+                    },
+                    "weight": 1
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:bundle",
+                            "tag": "{Items:[{id:\"farmersdelight:honey_cookie\",Count:12}]}"
+                        }
+                    },
+                    "weight": 5
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:bundle",
+                            "tag": "{Items:[{id:\"farmersdelight:melon_popsicle\",Count:2}]}"
+                        }
+                    },
+                    "weight": 6
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:bundle",
+                            "tag": "{Items:[{id:\"farmersdelight:egg_sandwich\",Count:2}]}"
+                        }
+                    },
+                    "weight": 5
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:bundle",
+                            "tag": "{Items:[{id:\"minecraft:cooked_cod\",Count:4}]}"
+                        }
+                    },
+                    "weight": 20
+                }
+            ]
+        }
+    }
+}

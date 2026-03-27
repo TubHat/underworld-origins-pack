@@ -1,0 +1,72 @@
+{
+    "type": "origins:multiple",
+    "name": "Camoflauge",
+    "description": "When sneaking for 3 seconds, enter sneak state. Complete invisibility but taking or dealing damage exits sneak mode, take 2x damage when in sneak mode",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 60,
+        "start_value": 0
+    },
+    "power": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mutant:felanth_invis_resource",
+            "compare_to": 60,
+            "comparison": "=="
+        }
+    },
+    "take_dmg": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 1
+        }
+    },
+    "on_dmg": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mutant:felanth_invis_resource",
+            "operation": "set",
+            "change": 0
+        },
+        "condition": {
+            "type": "origins:invisible"
+        }
+    },
+    "deal_dmg": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mutant:felanth_invis_resource",
+            "operation": "set",
+            "change": 0
+        },
+        "condition": {
+            "type": "origins:invisible"
+        }
+    },
+    "sneak": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else",
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "mutant:felanth_invis_resource",
+                "change": 20
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "mutant:felanth_invis_resource",
+                "change": -20
+            },
+            "condition": {
+                "type": "origins:sneaking"
+            }
+        }
+    }
+}

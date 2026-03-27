@@ -1,0 +1,15 @@
+{
+  "type": "origins:action_over_time",
+  "name": "Lucky",
+  "description": "You are luckier than the average person, slightly better loot discovery",
+  "interval": 40,
+  "entity_action": {
+    "type": "origins:apply_effect",
+    "effect": {
+      "effect": "minecraft:luck",
+      "duration": 100,
+      "show_particles": false,
+      "show_icon": false
+    }
+  }
+}
