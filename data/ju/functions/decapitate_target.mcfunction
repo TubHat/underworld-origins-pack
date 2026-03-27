@@ -1,4 +1,5 @@
 tellraw @s {"text":"UNHOLD ME SCUM","italic":true,"color":"dark_red"}
+playsound cavedweller:chase_4 @a ~ ~ ~ 1
 effect give @s blindness 4
 effect give @s jump_boost 4 200
 effect give @s slowness 4 14

@@ -1,0 +1,8 @@
+{
+    "type": "origins:climbing",
+    "name": "Climb",
+    "description": "You can scale walls",
+    "condition": {
+        "type": "origins:collided_horizontally"
+    }
+}

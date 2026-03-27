@@ -44,6 +44,35 @@
         },
         "interval": 20
     },
+    "health_regen": {
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:apply_effect",
+                                "effect":  {
+                                    "effect": "minecraft:regeneration",
+                                    "amplifier": 1,
+                                    "duration": 50,
+                                    "show_particles": false
+                                }
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:sparks"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
     "negate": {
         "type": "origins:modify_damage_taken",
         "modifier": {
