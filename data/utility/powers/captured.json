@@ -25,6 +25,15 @@
 			]
 		}
 	},
+	"no_waystone": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "waystones:warp_stone"
+			}
+		}
+	},
 	"weak": {
 		"type": "origins:action_over_time",
 		"interval": 40,

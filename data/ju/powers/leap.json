@@ -1,8 +1,6 @@
 {
-    "type": "origins:multiple",
     "name": "Dodge Roll",
-    "description": "Perform a dodge roll in the direction you are looking at, covering short distance and negating all damage for a split second.",
-    "pounce": {
+"description": "Perform a dodge roll in the direction you are looking at, covering short distance and negating all damage for a split second.",
         "type": "origins:active_self",
         "cooldown": 80,
         "hud_render": {
@@ -58,5 +56,3 @@
             "continuous": false
         }
     }
-    
-}

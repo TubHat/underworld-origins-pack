@@ -31,6 +31,10 @@
                 ]
             },
             {
+                "type": "origins:execute_command",
+                "command": "power grant @s ju:forcefield"
+            },
+            {
                 "type": "origins:choice",
                 "actions": [
                     {

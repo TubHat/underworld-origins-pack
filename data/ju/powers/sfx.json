@@ -1,29 +1,97 @@
 {
-    "type": "origins:action_over_time",
+    "type": "origins:multiple",
     "hidden": true,
-    "interval": 5,
-    "condition": {
-        "type": "origins:sprinting"
-    },
-    "entity_action": {
-        "type": "origins:and",
-        "actions": [
-            {
-                "type": "origins:play_sound",
-                "sound": "minecraft:block.metal.step",
-                "volume": 0.2,
-                "pitch": 1.5
-            },
-            {
-                "type": "origins:spawn_particles",
-                "particle": "minecraft:dripping_obsidian_tear",
-                "count": 3,
-                "spread": {
-                    "x": 0.2,
-                    "y": 0.1,
-                    "z": 0.1
+    "move": {
+        "type": "origins:action_over_time",
+        "hidden": true,
+        "interval": 5,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sprinting"
+                },
+                {
+                    "type": "origins:on_block"
                 }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.metal.step",
+                    "volume": 0.2,
+                    "pitch": 1.5
+                },
+                {
+                    "type": "origins:spawn_particles",
+                    "particle": "minecraft:dripping_obsidian_tear",
+                    "count": 3,
+                    "spread": {
+                        "x": 0.2,
+                        "y": 0.1,
+                        "z": 0.1
+                    }
+                }
+            ]
+        }
+    },
+    "bored": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0
+    },
+    "boredom": {
+        "type": "origins:action_over_time",
+        "hidden": true,
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sprinting"
+                },
+                {
+                    "type": "origins:on_block"
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:if_else",
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "ju:sfx_bored",
+                "change": 1
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "ju:sfx_bored",
+                "change": 0,
+                "operation": "set"
+            },
+            "condition": {
+                "type": "origins:moving",
+                "inverted": true
             }
-        ]
+        }
+    },
+    "on_bored": {
+        "type": "origins:action_over_time",
+        "interval": 60,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "ju:sfx_bored",
+            "compare_to": 5,
+            "comparison": "=="
+        },
+        "entity_action": {
+            "type": "origins:play_sound",
+            "sound": "minecraft:entity.blaze.ambient",
+            "volume": 0.05,
+            "pitch": 0.5
+        }
     }
 }

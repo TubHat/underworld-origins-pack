@@ -4,6 +4,10 @@
     "powers": [
         "ju:execute",
         "ju:invis",
+        "ju:leap",
+        "ju:emp",
+        "ju:sfx",
+        "ju:climb",
         "ju:gun",
         "ju:on_kill",
         "ju:health",

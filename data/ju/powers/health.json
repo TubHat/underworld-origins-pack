@@ -25,20 +25,48 @@
     "effects": {
         "type": "origins:action_over_time",
         "entity_action": {
-            "type": "origins:apply_effect",
-            "effects": [
+            "type": "origins:and",
+            "actions": [
                 {
-                    "effect": "minecraft:resistance",
-                    "duration": 40,
-                    "show_icon": false,
-                    "show_particles": false
+                    "type": "origins:apply_effect",
+                    "effects": [
+                        {
+                            "effect": "minecraft:resistance",
+                            "duration": 40,
+                            "show_icon": false,
+                            "show_particles": false
+                        },
+                        {
+                            "effect": "minecraft:speed",
+                            "duration": 40,
+                            "amplifier": 1,
+                            "show_icon": false,
+                            "show_particles": false
+                        }
+                    ]
                 },
                 {
-                    "effect": "minecraft:speed",
-                    "duration": 40,
-                    "amplifier": 1,
-                    "show_icon": false,
-                    "show_particles": false
+                    "type": "origins:area_of_effect",
+                    "radius": 3,
+                    "bientity_condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:nbt",
+                            "nbt": "{Tags: ['rebel']}",
+                            "inverted": true
+                        }
+                    },
+                    "bientity_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "minecraft:darkness",
+                                "amplifier": 1,
+                                "duration": 40
+                            }
+                        }
+                    }
                 }
             ]
         },
@@ -125,6 +153,13 @@
                     }
                 }
             ]
+        }
+    },
+    "on_air": {
+        "type": "origins:modify_air_speed",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.8
         }
     },
     "negate": {

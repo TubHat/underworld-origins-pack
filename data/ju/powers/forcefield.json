@@ -26,8 +26,8 @@
                     "pitch": 0.5
                 },
                 {
-                    "type": "origins:remove_power",
-                    "power": "ju:forcefield"
+                    "type": "origins:execute_command",
+                    "command": "power remove @s ju:forcefield"
                 }
             ]
         },
