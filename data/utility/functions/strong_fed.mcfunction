@@ -1,0 +1,2 @@
+particle minecraft:angry_villager ~ ~ ~ 1 1 1 1 50
+summon project_tacz:humanoid_npc ~ ~ ~ {Team:federation,ActiveEffects:[{Id:11,Duration:-1,Amplifier:0,ShowParticles:0b},{Id:1,Duration:-1,Amplifier:0,ShowParticles:0b}],Attributes:[{Name:"generic.armor",Base:0f}],HandItems:[{id:"tacz:modern_kinetic_gun",tag:{GunId:"tacz:m320"},Count:1},{}],ArmorItems:[{id:"miklos_mil_arm:blackboots_boots",Count:1},{id:"miklos_mil_arm:dcucamouniform_leggings",Count:1},{id:"miklos_mil_arm:dcuchestplateibavest_chestplate",Count:1},{id:"miklos_mil_arm:helmetpasgtdcucamo_helmet",Count:1}]}

@@ -3,6 +3,7 @@
     "description": "You have evolved to have features of an aquatic animal. You are amphibious in nature but water being your preferred territory. Decapodians tend to keep to themselves, away from the happenings on land. You are nearly unbeatable in your natural habitat but nothing to scoff at on land as well.",
     "unchoosable": true,
     "powers": [
+        "utility:hang_self",
         "utility:trapped",
         "utility:carcass",
         "utility:captor",

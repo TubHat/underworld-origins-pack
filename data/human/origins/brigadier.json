@@ -3,6 +3,7 @@
     "description": "You are a notable figure among mankind. Having spent decades in the underworld, you while not having mutated, possess seemingly inhuman skills. Your mastery over weapons is unmatched and your leadership skills honed to utmost.",
     "unchoosable": true,
     "powers": [
+        "utility:hang_self",
         "utility:trapped",
         "utility:capture",
         "utility:captor",

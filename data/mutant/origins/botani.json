@@ -3,6 +3,7 @@
     "description": "Mutants that spent excessive time near irradiated vegetation are observed to have plant like features. Botani have root tendrils for hind limbs and have a woody texture. They cannot consume any meat and their primary source of nutrition is directly from underground minerals.",
     "unchoosable": true,
     "powers": [
+        "utility:hang_self",
         "utility:trapped",
         "utility:carcass",
         "utility:captor",

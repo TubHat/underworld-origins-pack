@@ -3,6 +3,7 @@
     "description": "One of the main pillars of violence. A reason why war yet persists, You are an elite among elites, possessing immaculate leadership skills and a deathly craving for violence... Are you even human?",
     "unchoosable": true,
     "powers": [
+        "utility:hang_self",
         "utility:trapped",
         "utility:carcass",
         "utility:capture",

@@ -1,24 +1,30 @@
 {
     "type": "origins:attribute",
     "name": "Gunslinger",
-    "description": "You are as good as a living creature can get with guns. Fast reloads, aim speed, decreased recoil, increased accuracy, slightly increased trigger finger.",
+    "description": "Nearly instantaneous trigger finger",
     "modifiers": [
         {
             "attribute": "taa:reload_time",
             "name": "good reload speed",
-            "value": -0.3,
+            "value": -0.6,
             "operation": "multiply_total"
         },
         {
             "attribute": "taa:inaccuracy",
             "name": "good aim",
-            "value": -0.5,
+            "value": -0.7,
             "operation": "multiply_total"
         },
         {
             "attribute": "taa:ads_time",
             "name": "good aim speed",
-            "value": -0.3,
+            "value": -0.6,
+            "operation": "multiply_total"
+        },
+        {
+            "attribute": "taa:recoil",
+            "name": "less recoil",
+            "value": -0.6,
             "operation": "multiply_total"
         },
         {

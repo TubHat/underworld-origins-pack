@@ -3,6 +3,7 @@
     "description": "Felanths are an abnormal form of mutation. The subject has the features of a feline. Felanths are known for their extremely violent tendencies treading the boundry between a mindless mutatated and a sentient mutant.",
     "unchoosable": true,
     "powers": [
+        "utility:hang_self",
         "utility:trapped",
         "utility:carcass",
         "utility:captor",

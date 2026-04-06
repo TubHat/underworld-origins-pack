@@ -1,0 +1,74 @@
+{
+	"type": "origins:multiple",
+	"power": {
+		"type": "origins:active_self",
+		"hidden": true,
+		"key": "key.attack",
+		"cooldown": 20,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:sneaking"
+				},
+				{
+					"type": "origins:resource",
+					"resource": "utility:reinforcements_fed_resource",
+					"compare_to": 0,
+					"comparison": ">"
+				}
+			]
+		},
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:change_resource",
+					"resource": "utility:reinforcements_fed_resource",
+					"change": -1
+				},
+				{
+					"type": "origins:raycast",
+					"distance": 32,
+					"block": true,
+					"entity": false,
+					"fluid_handling": "any",
+					"command_along_ray": "particle dust 1 0 0 1 ~ ~ ~",
+					"block_action": {
+						"type": "origins:choice",
+						"actions": [
+							{
+								"element": {
+
+									"type": "origins:execute_command",
+									"command": "function utility:weak_fed"
+								},
+								"weight": 5
+							},
+							{
+								"element": {
+									"type": "origins:execute_command",
+									"command": "function utility:med_fed"
+								},
+								"weight": 5
+							},
+							{
+								"element": {
+									"type": "origins:execute_command",
+									"command": "function utility:strong_fed"
+								},
+								"weight": 1
+							}
+						]
+					}
+				}
+			]
+		}
+	},
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 10,
+		"start_value": 10
+	}
+}

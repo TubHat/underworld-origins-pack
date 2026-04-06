@@ -22,24 +22,48 @@
             }
         ]
     },
+    "step": {
+        "type": "origins:action_on_callback",
+        "entity_action_gained": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:step_height 2 @s"
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "scale reset @s"
+        }
+    },
     "effects": {
         "type": "origins:action_over_time",
         "entity_action": {
             "type": "origins:and",
             "actions": [
                 {
+                    "type": "origins:feed",
+                    "food": 1,
+                    "saturation": 0
+                },
+                {
                     "type": "origins:apply_effect",
                     "effects": [
                         {
                             "effect": "minecraft:resistance",
                             "duration": 40,
+                            "amplifier": 1,
+                            "show_icon": false,
+                            "show_particles": false
+                        },
+                        {
+                            "effect": "minecraft:night_vision",
+                            "duration": 400,
+                            "amplifier": 1,
                             "show_icon": false,
                             "show_particles": false
                         },
                         {
                             "effect": "minecraft:speed",
                             "duration": 40,
-                            "amplifier": 1,
+                            "amplifier": 2,
                             "show_icon": false,
                             "show_particles": false
                         }
@@ -51,8 +75,9 @@
                     "bientity_condition": {
                         "type": "origins:target_condition",
                         "condition": {
-                            "type": "origins:nbt",
-                            "nbt": "{Tags: ['rebel']}",
+                            "type": "origins:origin",
+                            "origin": "factions:rebellion",
+                            "layer": "origins:faction",
                             "inverted": true
                         }
                     },
@@ -84,12 +109,12 @@
                         "conditions": [
                             {
                                 "type": "origins:health",
-                                "compare_to": 30,
+                                "compare_to": 60,
                                 "comparison": "<"
                             },
                             {
                                 "type": "origins:health",
-                                "compare_to": 15,
+                                "compare_to": 30,
                                 "comparison": ">="
                             }
                         ]
@@ -121,12 +146,12 @@
                         "conditions": [
                             {
                                 "type": "origins:health",
-                                "compare_to": 15,
+                                "compare_to": 30,
                                 "comparison": "<"
                             },
                             {
                                 "type": "origins:health",
-                                "compare_to": 1,
+                                "compare_to": 0,
                                 "comparison": ">="
                             }
                         ]
@@ -159,7 +184,7 @@
         "type": "origins:modify_air_speed",
         "modifier": {
             "operation": "multiply_total",
-            "value": 0.8
+            "value": 0.5
         }
     },
     "negate": {

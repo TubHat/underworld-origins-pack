@@ -1,9 +1,12 @@
 {
-    "name": "Fast Mining",
-    "description": "Mine anything twice as fast",
     "type": "origins:modify_break_speed",
+    "hidden": true,
     "modifier": {
         "operation": "multiply_total",
-        "value": 1
+        "value": -0.9
+    },
+    "block_condition": {
+        "type": "origins:in_tag",
+        "tag": "minecraft:beds"
     }
 }

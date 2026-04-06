@@ -10,7 +10,7 @@
     "meter": {
         "type": "origins:resource",
         "min": 0,
-        "max": 11,
+        "max": 15,
         "start_value": 0,
         "max_action": {
             "type": "origins:and",
@@ -24,6 +24,13 @@
                     "sound": "minecraft:particle.soul_escape",
                     "volume": 2,
                     "pitch": 0.5
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "resource set @s ju:forcefield_meter 0"
+                },
+                {
+                    "type": "origins:clear_effect"
                 },
                 {
                     "type": "origins:execute_command",
@@ -83,11 +90,6 @@
                     "sound": "domesticationinnovation:chain_lightning",
                     "volume": 0.5,
                     "pitch": 1.5
-                },
-                {
-                    "type": "origins:change_resource",
-                    "resource": "ju:forcefield_meter",
-                    "change": 1
                 }
             ]
         }
@@ -123,6 +125,16 @@
                                     "pitch": 1.5
                                 },
                                 {
+                                    "type": "origins:add_velocity",
+                                    "z": -0.7,
+                                    "space": "local"
+                                },
+                                {
+                                    "type": "origins:add_velocity",
+                                    "y": 0.3,
+                                    "space": "world"
+                                },
+                                {
                                     "type": "origins:damage",
                                     "damage_type": "minecraft:out_of_world",
                                     "amount": 5
@@ -141,6 +153,11 @@
                         "y": 6,
                         "z": 6
                     }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "ju:forcefield_meter",
+                    "change": 1
                 },
                 {
                     "type": "origins:play_sound",

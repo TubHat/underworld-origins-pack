@@ -3,6 +3,7 @@
     "description": "You are a high ranking veteran soldier. You possess enhanced gun handling skills and have more combat experience than before.",
     "unchoosable": true,
     "powers": [
+        "utility:hang_self",
         "utility:trapped",
         "utility:carcass",
         "utility:capture",

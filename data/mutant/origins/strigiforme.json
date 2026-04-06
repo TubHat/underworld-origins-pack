@@ -1,0 +1,22 @@
+{
+    "name": "Strigiforme",
+    "description": "The Strigiforme mutations are seen in mutated individuals living in high altitude regions. They have avian features, such as feather formations throughout their bodies and possess sharp claws. But also possess the weakness of avians lke hollow bones and a weak physique",
+    "unchoosable": true,
+    "powers": [
+        "utility:hang_self",
+        "utility:trapped",
+        "utility:carcass",
+        "utility:captor",
+        "utility:capture",
+        "utility:travel_surface",
+        "utility:surface",
+        "utility:class_change",
+        "utility:origin_change",
+
+
+    ],
+    "icon": {
+        "item": "minecraft:feather"
+    },
+    "impact": 3
+}

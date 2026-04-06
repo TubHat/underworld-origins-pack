@@ -1,5 +1,6 @@
 {
 	"powers": [
+		"utility:hang_self",
 		"utility:trapped",
 		"utility:carcass",
         "utility:travel_surface",

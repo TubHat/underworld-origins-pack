@@ -1,0 +1,35 @@
+{
+	"type": "origins:action_on_block_use",
+	"block_condition": {
+		"type": "origins:block",
+		"block": "butchery:rope"
+	},
+	"hidden": true,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:execute_command",
+				"command": "function utility:kill_self"
+			}
+		]
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "mainhand",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:air"
+					}
+				}
+			},
+			{
+				"type": "origins:sneaking"
+			}
+		]
+	}
+}

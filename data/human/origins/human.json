@@ -2,6 +2,7 @@
     "name": "Human",
     "description": "After the contamination of the surface, few true humans remain. You are a conscript or a civilian, forced to side with whatever faction.",
     "powers": [
+        "utility:hang_self",
         "utility:trapped",
         "utility:carcass",
         "utility:surface",
