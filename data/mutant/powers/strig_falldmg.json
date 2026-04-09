@@ -1,0 +1,7 @@
+{
+    "type": "origins:modify_falling",
+    "name": "Lightweight",
+    "description": "You take no fall damage, and fall slightly slower than average.",
+    "velocity": -0.3,
+    "take_fall_damage": false
+}

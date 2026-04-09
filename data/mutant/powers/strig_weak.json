@@ -1,0 +1,27 @@
+{
+    "type": "origins:multiple",
+    "name": "Weak",
+    "description": "Your hollow bones make you more susceptible to damage. +25% damage received from non gun sources.",
+    "weak": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "name": "Weak to Physical",
+            "operation": "multiply_base",
+            "value": 0.25
+        },
+        "damage_condition": {
+            "type": "origins:attacker",
+            "entity_condition": {
+                "inverted": true,
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "item": "tacz:modern_kinetic_gun"
+                    }
+                }
+            }
+        }
+    }
+}

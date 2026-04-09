@@ -1,0 +1,49 @@
+{
+  "type": "origins:multiple",
+  "name": "Aerial Claws",
+  "description": "Unarmed damage increased by 2, and deal 5x when unarmed and in air",
+  "dmg": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "name": "Unarmed Cutting Strikes",
+      "value": 2,
+      "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:air"
+        }
+      }
+    }
+  },
+  "increased_dmg": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "multiply_base",
+      "value": 4
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:on_block",
+          "inverted": true
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:air"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

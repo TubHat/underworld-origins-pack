@@ -1,0 +1,42 @@
+{
+    "name": "Avian Diet",
+    "description": "Like any other avian, you may also consume seeds to satiate yourself.",
+    "type": "origins:active_self",
+    "cooldown": 40,
+    "key": {
+        "key": "key.attack",
+        "continuous": true
+    },
+    "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "mutant:seeds"
+            }
+        }
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:feed",
+                "food": 2,
+                "saturation": 1
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.player.burp"
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "mainhand",
+                "action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "type": "origins:attribute",
+    "name": "Sharp Eyed",
+    "description": "Your gun accuracy is nearly 100% accurate, even while moving.",
+    "modifier": {
+        "attribute": "taa:inaccuracy",
+        "operation": "multiply_base",
+        "value": 1
+    }
+}

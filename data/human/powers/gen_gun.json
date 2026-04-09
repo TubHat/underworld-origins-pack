@@ -12,7 +12,7 @@
         {
       "attribute": "taa:inaccuracy",
       "name": "good aim",
-      "value": -0.5,
+      "value": 0.5,
       "operation": "multiply_total"
     },
     {

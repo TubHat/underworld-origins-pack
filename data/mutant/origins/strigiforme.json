@@ -13,7 +13,21 @@
         "utility:class_change",
         "utility:origin_change",
 
-
+        "mutant:strig_dash",
+        "mutant:strig_gust",
+        "mutant:strig_spot",
+        "mutant:strig_throw",
+        "mutant:strig_claws",
+        "mutant:strig_range",
+        "mutant:strig_falldmg",
+        "mutant:strig_gun",
+        "mutant:strig_night_vision",
+        "mutant:strig_seeds",
+        "mutant:strig_feather",
+        "mutant:strig_health",
+        "mutant:strig_armor",
+        "mutant:strig_weak",
+        "mutant:devolve"
     ],
     "icon": {
         "item": "minecraft:feather"

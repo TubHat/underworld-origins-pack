@@ -1,0 +1,162 @@
+{
+    "type": "origins:multiple",
+    "name": "Ranged Expert",
+    "description": "You deal more damage to entities that are far away, damage scales on how far the entity is. But 15% reduced damage if too close.",
+    "change_reduce": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "mutant:strig_range_dmg",
+                "operation": "set",
+                "change": 0
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:distance",
+            "comparison": "<",
+            "compare_to": 20
+        }
+    },
+    "change_high": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "mutant:strig_range_dmg",
+                "operation": "set",
+                "change": 3
+            }
+        },        
+        "bientity_condition": {
+            "type": "origins:distance",
+            "comparison": ">=",
+            "compare_to": 60
+        }
+    },
+    "change_med": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "mutant:strig_range_dmg",
+                "operation": "set",
+                "change": 2
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:distance",
+                    "comparison": "<",
+                    "compare_to": 60
+                },
+                {
+                    "type": "origins:distance",
+                    "compare_to": 40,
+                    "comparison": ">="
+                }
+            ]
+        }
+    },
+    "change_low": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "mutant:strig_range_dmg",
+                "operation": "set",
+                "change": 1
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:distance",
+                    "comparison": "<",
+                    "compare_to": 40
+                },
+                {
+                    "type": "origins:distance",
+                    "compare_to": 20,
+                    "comparison": ">="
+                }
+            ]
+        }
+    },
+    "damage_reduce": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "taa:bullet_gundamage",
+            "operation": "multiply_base",
+            "value": -0.15
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mutant:strig_range_dmg",
+            "compare_to": 0,
+            "comparison": "=="
+        }
+    },
+    "damage_high": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "taa:bullet_gundamage",
+            "operation": "multiply_base",
+            "value": 0.4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mutant:strig_range_dmg",
+            "compare_to": 3,
+            "comparison": "=="
+        }
+    },
+    "damage_med": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "taa:bullet_gundamage",
+            "operation": "multiply_base",
+            "value": 0.3
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mutant:strig_range_dmg",
+            "compare_to": 2,
+            "comparison": "=="
+        }
+    },
+    "damage_low": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "taa:bullet_gundamage",
+            "operation": "multiply_base",
+            "value": 0.2
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mutant:strig_range_dmg",
+            "compare_to": 1,
+            "comparison": "=="
+        }
+    },
+    "dmg": {
+        "type": "origins:resource",
+        "max": 3,
+        "min": 0,
+        "start_value": 3
+    },
+    "safe_case": {
+        "type": "origins:action_on_callback",
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "attribute @s taa:bullet_gundamage base set 1.0"
+        }
+    }
+}

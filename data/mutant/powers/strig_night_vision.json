@@ -1,0 +1,6 @@
+{
+    "type": "origins:night_vision",
+    "name": "Owl Vision",
+    "description": "You can see better in the dark than most, although not as good as night vision potion",
+    "strength": 0.5
+}

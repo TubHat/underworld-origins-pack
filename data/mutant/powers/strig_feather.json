@@ -1,0 +1,14 @@
+{
+    "type": "origins:action_over_time",
+    "name": "Shed Feathers",
+    "description": "Occasionally shed feathers",
+    "interval": 600,
+    "entity_action": {
+        "type": "origins:chance",
+        "chance": 0.1,
+        "action": {
+            "type": "origins:execute_command",
+            "command": "summon item ~ ~ ~ {Item:{id:\"minecraft:feather\",Count:1b}}"
+        }
+    }
+}

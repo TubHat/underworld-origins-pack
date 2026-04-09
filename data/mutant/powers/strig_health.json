@@ -1,0 +1,10 @@
+{
+    "type": "origins:attribute",
+    "name": "Fragile",
+    "description": "Your hollow bones make you fragile. -3 hearts",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": -6
+    }
+}

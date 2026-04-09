@@ -1,0 +1,54 @@
+{
+    "name": "Shoot Feathers",
+    "description": "You can use shoot a multitude of feathers that deal minimal damage but bypass armor completely, devastating in close range similar to a shotgun.",
+    "type": "origins:fire_projectile",
+    "entity_type": "minecraft:arrow",
+    "cooldown": 20,
+    "speed": 3,
+    "hud_render": {
+        "should_render": false
+    },
+    "count": 6,
+    "divergence": 3,
+    "interval": 5,
+    "tag": "{pickup:0,Potion:\"minecraft:awkward\",CustomPotionColor:16383998,CustomPotionEffects:[{Id:7,Duration:1}]}",
+    "key": {
+        "key": "key.use",
+        "continuous": true
+    },
+    "shooter_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.ender_pearl.throw"
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "offhand",
+                "action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                }
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "offhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "item": "minecraft:feather"
+                    }
+                }
+            },
+            {
+                "type": "origins:sneaking"
+            }
+        ]
+    }
+}
